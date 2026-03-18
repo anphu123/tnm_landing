@@ -105,27 +105,32 @@ export default function AppShowcaseSection() {
               </div>
             </div>
 
-            {/* CENTER – phone frame with sliding screen */}
+            {/* CENTER – whole phone slides as one unit */}
             <div className="absolute animate-float" style={{left:"50%",bottom:0,zIndex:20,transform:"translateX(-50%)"}}>
-              {/* Glow */}
+              {/* Glow – always centered */}
               <div className="absolute -inset-6 rounded-[3.5rem] blur-3xl -z-10" style={{background:"rgba(34,197,94,0.14)"}} />
-              {/* Phone bezel – fixed */}
-              <div className="relative bg-gray-900" style={{width:"230px",borderRadius:"3rem",padding:"8px",boxShadow:"0 0 80px rgba(34,197,94,0.3),0 40px 80px rgba(0,0,0,0.6)",border:"2px solid rgba(34,197,94,0.35)"}}>
-                {/* Fixed notch */}
-                <div className="absolute" style={{top:"12px",left:"50%",transform:"translateX(-50%)",width:"56px",height:"15px",background:"#000",borderRadius:"9999px",zIndex:30}} />
-                {/* Sliding screen viewport — 230px total - 4px border - 16px padding = 210px */}
-                <div style={{overflow:"hidden",borderRadius:"2.3rem",width:"210px"}}>
-                  <div
-                    style={{
-                      display:"flex",
-                      transform: `translateX(calc(-${activeIdx} * 210px))`,
-                      transition: "transform 0.55s cubic-bezier(0.4,0,0.2,1)",
-                    }}
-                  >
-                    {screens.map((screen, i) => (
-                      <img key={i} src={screen.img} alt="Easy Swap App" style={{width:"210px",flexShrink:0,display:"block"}} />
-                    ))}
-                  </div>
+              {/* Carousel: overflow clips adjacent phones */}
+              <div style={{width:"230px",overflow:"hidden"}}>
+                <div style={{
+                  display:"flex",
+                  transform:`translateX(calc(-${activeIdx} * 230px))`,
+                  transition:"transform 0.55s cubic-bezier(0.4,0,0.2,1)",
+                }}>
+                  {screens.map((screen, i) => (
+                    <div key={i} className="relative bg-gray-900 shrink-0" style={{
+                      width:"230px",
+                      borderRadius:"3rem",
+                      padding:"8px",
+                      border: i === activeIdx ? "2px solid rgba(34,197,94,0.45)" : "2px solid rgba(255,255,255,0.08)",
+                      boxShadow: i === activeIdx ? "0 0 60px rgba(34,197,94,0.25),0 30px 60px rgba(0,0,0,0.5)" : "none",
+                      transition:"border 0.4s, box-shadow 0.4s",
+                    }}>
+                      {/* Notch */}
+                      <div style={{position:"absolute",top:"12px",left:"50%",transform:"translateX(-50%)",width:"56px",height:"15px",background:"#000",borderRadius:"9999px",zIndex:30}} />
+                      {/* Screen */}
+                      <img src={screen.img} alt="Easy Swap App" style={{width:"100%",borderRadius:"2.3rem",display:"block"}} />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -180,26 +185,28 @@ export default function AppShowcaseSection() {
             </div>
           </div>
 
-          {/* Center phone – mobile carousel */}
+          {/* Center phone – mobile carousel (whole frame slides) */}
           <div className="absolute animate-float" style={{left:"50%",bottom:0,zIndex:20,transform:"translateX(-50%)"}}>
             <div className="absolute -inset-4 rounded-[3rem] blur-2xl -z-10" style={{background:"rgba(34,197,94,0.11)"}} />
-            {/* Phone bezel – fixed */}
-            <div className="relative bg-gray-900" style={{width:"168px",borderRadius:"2.6rem",padding:"7px",border:"2px solid rgba(34,197,94,0.38)",boxShadow:"0 0 50px rgba(34,197,94,0.24),0 24px 50px rgba(0,0,0,0.55)"}}>
-              {/* Fixed notch */}
-              <div className="absolute" style={{top:"10px",left:"50%",transform:"translateX(-50%)",width:"50px",height:"13px",background:"#000",borderRadius:"9999px",zIndex:30}} />
-              {/* Sliding screen viewport — 168px total - 4px border - 14px padding = 150px */}
-              <div style={{overflow:"hidden",borderRadius:"2rem",width:"150px"}}>
-                <div
-                  style={{
-                    display:"flex",
-                    transform: `translateX(calc(-${activeIdx} * 150px))`,
-                    transition: "transform 0.55s cubic-bezier(0.4,0,0.2,1)",
-                  }}
-                >
-                  {screens.map((screen, i) => (
-                    <img key={i} src={screen.img} alt="Easy Swap App" style={{width:"150px",flexShrink:0,display:"block"}} />
-                  ))}
-                </div>
+            <div style={{width:"168px",overflow:"hidden"}}>
+              <div style={{
+                display:"flex",
+                transform:`translateX(calc(-${activeIdx} * 168px))`,
+                transition:"transform 0.55s cubic-bezier(0.4,0,0.2,1)",
+              }}>
+                {screens.map((screen, i) => (
+                  <div key={i} className="relative bg-gray-900 shrink-0" style={{
+                    width:"168px",
+                    borderRadius:"2.6rem",
+                    padding:"7px",
+                    border: i === activeIdx ? "2px solid rgba(34,197,94,0.38)" : "2px solid rgba(255,255,255,0.08)",
+                    boxShadow: i === activeIdx ? "0 0 50px rgba(34,197,94,0.24),0 24px 50px rgba(0,0,0,0.55)" : "none",
+                    transition:"border 0.4s, box-shadow 0.4s",
+                  }}>
+                    <div style={{position:"absolute",top:"10px",left:"50%",transform:"translateX(-50%)",width:"50px",height:"13px",background:"#000",borderRadius:"9999px",zIndex:30}} />
+                    <img src={screen.img} alt="Easy Swap App" style={{width:"100%",borderRadius:"2rem",display:"block"}} />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
