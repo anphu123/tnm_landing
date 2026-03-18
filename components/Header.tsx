@@ -21,9 +21,9 @@ export default function Header() {
           <a href="/" className="flex items-center shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo.png"
+              src="/img/logo-tnm.jpg"
               alt="Tầm Nhìn Mới"
-              className="h-10 w-auto object-contain"
+              className="h-9 w-auto object-contain rounded-sm"
             />
           </a>
 
