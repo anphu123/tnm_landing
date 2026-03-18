@@ -55,7 +55,9 @@ export default function AppShowcaseSection() {
           {features.map((f,i)=>(
             <Reveal key={f.title} variant="up" delay={i*70}>
               <div className="flex items-center gap-2.5 bg-white/[0.04] border border-white/8 rounded-2xl p-3 hover:border-green-500/30 transition-all">
-                <div className="text-lg shrink-0">{f.icon}</div>
+                <Reveal variant="spin" delay={i*90} duration={600} className="shrink-0">
+                  <div className="text-lg">{f.icon}</div>
+                </Reveal>
                 <div className="min-w-0">
                   <div className="text-white font-bold text-[11px] leading-tight truncate">{f.title}</div>
                   <div className="text-gray-600 text-[10px] mt-0.5 leading-tight line-clamp-2">{f.desc}</div>
@@ -72,7 +74,9 @@ export default function AppShowcaseSection() {
             {features.slice(0,2).map((f,i)=>(
               <Reveal key={f.title} variant="right" delay={i*120}>
                 <div className="flex items-start gap-3 bg-white/[0.04] border border-white/8 rounded-2xl p-4 hover:bg-white/[0.07] hover:border-green-500/30 transition-all duration-300 group cursor-default">
-                  <div className="text-xl group-hover:scale-110 transition-transform shrink-0">{f.icon}</div>
+                  <Reveal variant="spin" delay={i*120 + 200} duration={650} className="shrink-0">
+                    <div className="text-xl group-hover:scale-110 transition-transform">{f.icon}</div>
+                  </Reveal>
                   <div>
                     <div className="text-white font-bold text-sm leading-snug">{f.title}</div>
                     <div className="text-gray-600 text-xs mt-1 leading-relaxed">{f.desc}</div>
@@ -159,7 +163,9 @@ export default function AppShowcaseSection() {
             {features.slice(2,4).map((f,i)=>(
               <Reveal key={f.title} variant="left" delay={i*120}>
                 <div className="flex items-start gap-3 bg-white/[0.04] border border-white/8 rounded-2xl p-4 hover:bg-white/[0.07] hover:border-green-500/30 transition-all duration-300 group cursor-default">
-                  <div className="text-xl group-hover:scale-110 transition-transform shrink-0">{f.icon}</div>
+                  <Reveal variant="spin-r" delay={i*120 + 200} duration={650} className="shrink-0">
+                    <div className="text-xl group-hover:scale-110 transition-transform">{f.icon}</div>
+                  </Reveal>
                   <div>
                     <div className="text-white font-bold text-sm leading-snug">{f.title}</div>
                     <div className="text-gray-600 text-xs mt-1 leading-relaxed">{f.desc}</div>
