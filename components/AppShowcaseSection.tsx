@@ -17,12 +17,47 @@ const features = [
   { icon: "💰", title: "Thanh toán 24h", desc: "Chuyển khoản ngân hàng hoặc ví điện tử ngay." },
 ];
 
+function PhoneFrame({ screen, active }: { screen: { img: string; label: string }; active?: boolean }) {
+  return (
+    <div className="relative bg-gray-900" style={{
+      width:"230px",
+      borderRadius:"3rem",
+      padding:"8px",
+      border: active ? "2px solid rgba(34,197,94,0.45)" : "2px solid rgba(255,255,255,0.08)",
+      boxShadow: active ? "0 0 60px rgba(34,197,94,0.25),0 30px 60px rgba(0,0,0,0.5)" : "none",
+    }}>
+      <div style={{position:"absolute",top:"12px",left:"50%",transform:"translateX(-50%)",width:"56px",height:"15px",background:"#000",borderRadius:"9999px",zIndex:30}} />
+      <img src={screen.img} alt="Easy Swap App" style={{width:"100%",borderRadius:"2.3rem",display:"block"}} />
+    </div>
+  );
+}
+
+function PhoneFrameSm({ screen, active }: { screen: { img: string; label: string }; active?: boolean }) {
+  return (
+    <div className="relative bg-gray-900" style={{
+      width:"168px",
+      borderRadius:"2.6rem",
+      padding:"7px",
+      border: active ? "2px solid rgba(34,197,94,0.38)" : "2px solid rgba(255,255,255,0.08)",
+      boxShadow: active ? "0 0 50px rgba(34,197,94,0.24),0 24px 50px rgba(0,0,0,0.55)" : "none",
+    }}>
+      <div style={{position:"absolute",top:"10px",left:"50%",transform:"translateX(-50%)",width:"50px",height:"13px",background:"#000",borderRadius:"9999px",zIndex:30}} />
+      <img src={screen.img} alt="Easy Swap App" style={{width:"100%",borderRadius:"2rem",display:"block"}} />
+    </div>
+  );
+}
+
 export default function AppShowcaseSection() {
-  const [activeIdx, setActiveIdx] = useState(0);
+  const [slide, setSlide] = useState({ curr: 0, prev: -1, key: 0 });
+  const activeIdx = slide.curr;
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveIdx((i) => (i + 1) % screens.length);
+      setSlide((s) => ({
+        prev: s.curr,
+        curr: (s.curr + 1) % screens.length,
+        key: s.key + 1,
+      }));
     }, 2500);
     return () => clearInterval(timer);
   }, []);
@@ -113,32 +148,20 @@ export default function AppShowcaseSection() {
               </div>
             </div>
 
-            {/* CENTER — spins in from nothing, then floats */}
+            {/* CENTER — frame mới spin vào, frame cũ spin ra, chồng nhau */}
             <div className="absolute animate-phone-fan-center" style={{left:"50%",bottom:0,zIndex:20}}>
-              <div className="animate-float">
+              <div className="animate-float" style={{position:"relative",width:"230px",height:"100%"}}>
                 {/* Glow */}
                 <div className="absolute -inset-6 rounded-[3.5rem] blur-3xl -z-10" style={{background:"rgba(34,197,94,0.14)"}} />
-                {/* Carousel */}
-                <div style={{width:"230px",overflow:"hidden"}}>
-                  <div style={{
-                    display:"flex",
-                    transform:`translateX(calc(-${activeIdx} * 230px))`,
-                    transition:"transform 0.55s cubic-bezier(0.4,0,0.2,1)",
-                  }}>
-                    {screens.map((screen, i) => (
-                      <div key={i} className="relative bg-gray-900 shrink-0" style={{
-                        width:"230px",
-                        borderRadius:"3rem",
-                        padding:"8px",
-                        border: i === activeIdx ? "2px solid rgba(34,197,94,0.45)" : "2px solid rgba(255,255,255,0.08)",
-                        boxShadow: i === activeIdx ? "0 0 60px rgba(34,197,94,0.25),0 30px 60px rgba(0,0,0,0.5)" : "none",
-                        transition:"border 0.4s, box-shadow 0.4s",
-                      }}>
-                        <div style={{position:"absolute",top:"12px",left:"50%",transform:"translateX(-50%)",width:"56px",height:"15px",background:"#000",borderRadius:"9999px",zIndex:30}} />
-                        <img src={screen.img} alt="Easy Swap App" style={{width:"100%",borderRadius:"2.3rem",display:"block"}} />
-                      </div>
-                    ))}
+                {/* Prev frame — spin out */}
+                {slide.prev >= 0 && (
+                  <div key={`out-${slide.key}`} className="animate-phone-spin-out" style={{position:"absolute",inset:0}}>
+                    <PhoneFrame screen={screens[slide.prev]} active />
                   </div>
+                )}
+                {/* Curr frame — spin in */}
+                <div key={`in-${slide.key}`} className="animate-phone-spin-in">
+                  <PhoneFrame screen={screens[slide.curr]} active />
                 </div>
               </div>
             </div>
@@ -199,28 +222,17 @@ export default function AppShowcaseSection() {
             </div>
           </div>
 
-          {/* Center phone – mobile carousel (whole frame slides) */}
+          {/* Center phone – mobile spin crossfade */}
           <div className="absolute animate-float" style={{left:"50%",bottom:0,zIndex:20,transform:"translateX(-50%)"}}>
             <div className="absolute -inset-4 rounded-[3rem] blur-2xl -z-10" style={{background:"rgba(34,197,94,0.11)"}} />
-            <div style={{width:"168px",overflow:"hidden"}}>
-              <div style={{
-                display:"flex",
-                transform:`translateX(calc(-${activeIdx} * 168px))`,
-                transition:"transform 0.55s cubic-bezier(0.4,0,0.2,1)",
-              }}>
-                {screens.map((screen, i) => (
-                  <div key={i} className="relative bg-gray-900 shrink-0" style={{
-                    width:"168px",
-                    borderRadius:"2.6rem",
-                    padding:"7px",
-                    border: i === activeIdx ? "2px solid rgba(34,197,94,0.38)" : "2px solid rgba(255,255,255,0.08)",
-                    boxShadow: i === activeIdx ? "0 0 50px rgba(34,197,94,0.24),0 24px 50px rgba(0,0,0,0.55)" : "none",
-                    transition:"border 0.4s, box-shadow 0.4s",
-                  }}>
-                    <div style={{position:"absolute",top:"10px",left:"50%",transform:"translateX(-50%)",width:"50px",height:"13px",background:"#000",borderRadius:"9999px",zIndex:30}} />
-                    <img src={screen.img} alt="Easy Swap App" style={{width:"100%",borderRadius:"2rem",display:"block"}} />
-                  </div>
-                ))}
+            <div style={{position:"relative",width:"168px"}}>
+              {slide.prev >= 0 && (
+                <div key={`mob-out-${slide.key}`} className="animate-phone-spin-out" style={{position:"absolute",inset:0}}>
+                  <PhoneFrameSm screen={screens[slide.prev]} active />
+                </div>
+              )}
+              <div key={`mob-in-${slide.key}`} className="animate-phone-spin-in">
+                <PhoneFrameSm screen={screens[slide.curr]} active />
               </div>
             </div>
           </div>
@@ -240,7 +252,7 @@ export default function AppShowcaseSection() {
           {screens.map((_, i) => (
             <button
               key={i}
-              onClick={() => setActiveIdx(i)}
+              onClick={() => setSlide((s) => ({ prev: s.curr, curr: i, key: s.key + 1 }))}
               className={`rounded-full transition-all duration-300 ${i === activeIdx ? "w-6 h-2 bg-green-400" : "w-2 h-2 bg-white/20 hover:bg-white/40"}`}
             />
           ))}
