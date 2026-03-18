@@ -106,15 +106,13 @@ export default function Hero() {
             <div className="animate-fade-up delay-600 flex items-center gap-3 pt-1">
               <span className="text-gray-600 text-[10px] uppercase tracking-widest font-bold shrink-0">Đối tác:</span>
               <div className="flex items-center gap-2 bg-orange-500/10 border border-orange-400/25 rounded-lg px-3 py-1.5">
-                <div className="w-4 h-4 bg-orange-500 rounded flex items-center justify-center shrink-0">
-                  <span className="text-white text-[7px] font-black leading-none">Mi</span>
-                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Xiaomi" className="w-5 h-5 object-contain bg-white rounded p-0.5" />
                 <span className="text-white text-[11px] font-bold">Xiaomi Store</span>
               </div>
               <div className="flex items-center gap-2 bg-blue-500/10 border border-blue-400/25 rounded-lg px-3 py-1.5">
-                <div className="w-4 h-4 bg-blue-600 rounded flex items-center justify-center shrink-0">
-                  <span className="text-white text-[7px] font-black leading-none">V+</span>
-                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="https://viettelstore.vn/Content/images/logo-viettel-store.png" alt="Viettel Store" className="w-5 h-5 object-contain bg-white rounded p-0.5" />
                 <span className="text-white text-[11px] font-bold">Viettel Store</span>
               </div>
             </div>

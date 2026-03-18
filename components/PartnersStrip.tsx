@@ -21,8 +21,13 @@ export default function PartnersStrip() {
 
             {/* Xiaomi Store */}
             <div className="flex items-center gap-3 bg-gradient-to-r from-orange-500/10 to-orange-400/5 border border-orange-400/30 rounded-2xl px-5 py-3 shadow-lg shadow-orange-500/10 hover:border-orange-400/60 hover:shadow-orange-500/20 transition-all duration-300">
-              <div className="w-9 h-9 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shrink-0 shadow-md shadow-orange-500/30">
-                <span className="text-white text-sm font-black">Mi</span>
+              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0 shadow-md shadow-orange-500/20 p-1">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg"
+                  alt="Xiaomi"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <div className="text-white font-extrabold text-sm leading-none">Xiaomi Store</div>
@@ -32,8 +37,13 @@ export default function PartnersStrip() {
 
             {/* Viettel Store */}
             <div className="flex items-center gap-3 bg-gradient-to-r from-blue-500/10 to-blue-400/5 border border-blue-400/30 rounded-2xl px-5 py-3 shadow-lg shadow-blue-500/10 hover:border-blue-400/60 hover:shadow-blue-500/20 transition-all duration-300">
-              <div className="w-9 h-9 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shrink-0 shadow-md shadow-blue-500/30">
-                <span className="text-white text-xs font-black">V+</span>
+              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0 shadow-md shadow-blue-500/20 p-1">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://viettelstore.vn/Content/images/logo-viettel-store.png"
+                  alt="Viettel Store"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <div className="text-white font-extrabold text-sm leading-none">Viettel Store</div>
