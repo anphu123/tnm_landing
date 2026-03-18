@@ -88,56 +88,65 @@ export default function AppShowcaseSection() {
             {/* Floor glow */}
             <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-96 h-16 rounded-full blur-3xl pointer-events-none" style={{background:"rgba(34,197,94,0.18)"}} />
 
-            {/* Far-left (screen 4) */}
-            <Reveal variant="up" delay={80} className="absolute animate-float-badge-3"
-              style={{left:"50%",bottom:0,zIndex:1}}>
+            {/* Far-left phone */}
+            <div className="hidden lg:block absolute animate-float-badge-3" style={{left:"50%",bottom:0,zIndex:1}}>
               <div className="bg-gray-900 rounded-[2rem] p-[5px] shadow-xl"
                 style={{width:"108px",transform:"translateX(calc(-50% - 310px)) rotate(-10deg) translateY(44px)",opacity:0.45,filter:"brightness(0.7)",border:"1px solid rgba(255,255,255,0.06)"}}>
                 <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-9 h-[10px] bg-black rounded-full z-10" />
-                <img src={screens[3].img} alt="" className="w-full rounded-[1.6rem]" />
+                <img src={screens[(activeIdx - 2 + screens.length) % screens.length].img} alt="" className="w-full rounded-[1.6rem] transition-opacity duration-300" />
               </div>
-            </Reveal>
+            </div>
 
-            {/* Left (screen 2) */}
-            <Reveal variant="up" delay={150} className="absolute animate-float-badge-1"
-              style={{left:"50%",bottom:0,zIndex:5}}>
+            {/* Left phone */}
+            <div className="hidden lg:block absolute animate-float-badge-1" style={{left:"50%",bottom:0,zIndex:5}}>
               <div className="bg-gray-900 rounded-[2.4rem] p-[7px] shadow-2xl"
                 style={{width:"158px",transform:"translateX(calc(-50% - 190px)) rotate(-6deg) translateY(22px)",opacity:0.78,filter:"brightness(0.88)",border:"1px solid rgba(255,255,255,0.1)"}}>
                 <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-12 h-[13px] bg-black rounded-full z-10" />
-                <img src={screens[1].img} alt="" className="w-full rounded-[2rem]" />
+                <img src={screens[(activeIdx - 1 + screens.length) % screens.length].img} alt="" className="w-full rounded-[2rem] transition-opacity duration-300" />
               </div>
-            </Reveal>
+            </div>
 
-            {/* CENTER (screen 1) – hero phone */}
-            <Reveal variant="up" delay={60} className="absolute animate-float"
-              style={{left:"50%",bottom:0,zIndex:20}}>
-              <div className="relative bg-gray-900 rounded-[3rem] p-2"
-                style={{width:"230px",transform:"translateX(-50%)",boxShadow:"0 0 80px rgba(34,197,94,0.3),0 40px 80px rgba(0,0,0,0.6)",border:"2px solid rgba(34,197,94,0.35)"}}>
-                <div className="absolute -inset-6 rounded-[3.5rem] blur-3xl -z-10" style={{background:"rgba(34,197,94,0.14)"}} />
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[56px] h-[15px] bg-black rounded-full z-10" />
-                <img key={activeIdx} src={screens[activeIdx].img} alt="Easy Swap App" className="w-full rounded-[2.6rem] transition-opacity duration-500" />
+            {/* CENTER – full phone frame carousel */}
+            <div className="absolute animate-float" style={{left:"50%",bottom:0,zIndex:20,transform:"translateX(-50%)"}}>
+              {/* Glow */}
+              <div className="absolute -inset-6 rounded-[3.5rem] blur-3xl -z-10" style={{background:"rgba(34,197,94,0.14)"}} />
+              {/* Carousel track */}
+              <div style={{width:"230px",overflow:"hidden",borderRadius:"3rem",boxShadow:"0 0 80px rgba(34,197,94,0.3),0 40px 80px rgba(0,0,0,0.6)",border:"2px solid rgba(34,197,94,0.35)"}}>
+                <div
+                  className="flex"
+                  style={{
+                    width: `${screens.length * 230}px`,
+                    transform: `translateX(calc(-${activeIdx} * 230px))`,
+                    transition: "transform 0.55s cubic-bezier(0.4,0,0.2,1)",
+                  }}
+                >
+                  {screens.map((screen, i) => (
+                    <div key={i} className="relative bg-gray-900 shrink-0" style={{width:"230px",padding:"8px"}}>
+                      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[56px] h-[15px] bg-black rounded-full z-10" />
+                      <img src={screen.img} alt="Easy Swap App" className="w-full" style={{borderRadius:"2.6rem"}} />
+                    </div>
+                  ))}
+                </div>
               </div>
-            </Reveal>
+            </div>
 
-            {/* Right (screen 3) */}
-            <Reveal variant="up" delay={150} className="absolute animate-float-badge-2"
-              style={{left:"50%",bottom:0,zIndex:5}}>
+            {/* Right phone */}
+            <div className="hidden lg:block absolute animate-float-badge-2" style={{left:"50%",bottom:0,zIndex:5}}>
               <div className="bg-gray-900 rounded-[2.4rem] p-[7px] shadow-2xl"
                 style={{width:"158px",transform:"translateX(calc(-50% + 190px)) rotate(6deg) translateY(22px)",opacity:0.78,filter:"brightness(0.88)",border:"1px solid rgba(255,255,255,0.1)"}}>
                 <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-12 h-[13px] bg-black rounded-full z-10" />
-                <img src={screens[2].img} alt="" className="w-full rounded-[2rem]" />
+                <img src={screens[(activeIdx + 1) % screens.length].img} alt="" className="w-full rounded-[2rem] transition-opacity duration-300" />
               </div>
-            </Reveal>
+            </div>
 
-            {/* Far-right (screen 5) */}
-            <Reveal variant="up" delay={80} className="absolute animate-float-badge-3"
-              style={{left:"50%",bottom:0,zIndex:1}}>
+            {/* Far-right phone */}
+            <div className="hidden lg:block absolute animate-float-badge-3" style={{left:"50%",bottom:0,zIndex:1}}>
               <div className="bg-gray-900 rounded-[2rem] p-[5px] shadow-xl"
                 style={{width:"108px",transform:"translateX(calc(-50% + 310px)) rotate(10deg) translateY(44px)",opacity:0.45,filter:"brightness(0.7)",border:"1px solid rgba(255,255,255,0.06)"}}>
                 <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-9 h-[10px] bg-black rounded-full z-10" />
-                <img src={screens[4].img} alt="" className="w-full rounded-[1.6rem]" />
+                <img src={screens[(activeIdx + 2) % screens.length].img} alt="" className="w-full rounded-[1.6rem] transition-opacity duration-300" />
               </div>
-            </Reveal>
+            </div>
           </div>
 
           {/* Right features – fixed width */}
@@ -171,13 +180,25 @@ export default function AppShowcaseSection() {
             </div>
           </div>
 
-          {/* Center phone */}
-          <div className="absolute animate-float" style={{left:"50%",bottom:0,zIndex:20}}>
-            <div className="relative bg-gray-900 rounded-[2.6rem] p-[7px] shadow-2xl"
-              style={{width:"168px",transform:"translateX(-50%)",border:"1.5px solid rgba(34,197,94,0.38)",boxShadow:"0 0 50px rgba(34,197,94,0.24),0 24px 50px rgba(0,0,0,0.55)"}}>
-              <div className="absolute -inset-4 rounded-[3rem] blur-2xl -z-10" style={{background:"rgba(34,197,94,0.11)"}} />
-              <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-[50px] h-[13px] bg-black rounded-full z-10" />
-              <img key={activeIdx} src={screens[activeIdx].img} alt="Easy Swap App" className="w-full rounded-[2.2rem] transition-opacity duration-500" />
+          {/* Center phone – mobile carousel */}
+          <div className="absolute animate-float" style={{left:"50%",bottom:0,zIndex:20,transform:"translateX(-50%)"}}>
+            <div className="absolute -inset-4 rounded-[3rem] blur-2xl -z-10" style={{background:"rgba(34,197,94,0.11)"}} />
+            <div style={{width:"168px",overflow:"hidden",borderRadius:"2.6rem",border:"1.5px solid rgba(34,197,94,0.38)",boxShadow:"0 0 50px rgba(34,197,94,0.24),0 24px 50px rgba(0,0,0,0.55)"}}>
+              <div
+                className="flex"
+                style={{
+                  width: `${screens.length * 168}px`,
+                  transform: `translateX(calc(-${activeIdx} * 168px))`,
+                  transition: "transform 0.55s cubic-bezier(0.4,0,0.2,1)",
+                }}
+              >
+                {screens.map((screen, i) => (
+                  <div key={i} className="relative bg-gray-900 shrink-0" style={{width:"168px",padding:"7px"}}>
+                    <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-[50px] h-[13px] bg-black rounded-full z-10" />
+                    <img src={screen.img} alt="Easy Swap App" className="w-full" style={{borderRadius:"2.2rem"}} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
