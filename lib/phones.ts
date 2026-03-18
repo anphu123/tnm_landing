@@ -14,9 +14,13 @@ export interface Brand {
 }
 
 export const brands: Brand[] = [
-  { slug: "apple",   name: "Apple",   logo: "🍎", color: "from-gray-800 to-gray-600",    count: 37 },
-  { slug: "samsung", name: "Samsung", logo: "🔵", color: "from-blue-600 to-blue-400",    count: 50 },
-  { slug: "xiaomi",  name: "Xiaomi",  logo: "🟠", color: "from-green-500 to-red-500",   count: 30 },
+  { slug: "apple",   name: "Apple",   logo: "🍎", color: "from-gray-800 to-gray-600",     count: 37 },
+  { slug: "samsung", name: "Samsung", logo: "🔵", color: "from-blue-600 to-blue-400",     count: 50 },
+  { slug: "xiaomi",  name: "Xiaomi",  logo: "🟠", color: "from-orange-500 to-red-500",   count: 30 },
+  { slug: "oppo",    name: "Oppo",    logo: "🟢", color: "from-green-600 to-teal-500",   count: 87 },
+  { slug: "realme",  name: "Realme",  logo: "🟡", color: "from-yellow-500 to-orange-400", count: 22 },
+  { slug: "vivo",    name: "Vivo",    logo: "🔷", color: "from-blue-500 to-indigo-600",  count: 14 },
+  { slug: "honor",   name: "Honor",   logo: "🔴", color: "from-red-600 to-rose-500",     count: 19 },
 ];
 
 // ─── Condition grade type (declared early for PRICE_MAP) ─────────────────────
@@ -658,6 +662,506 @@ export const PRICE_MAP: Record<string, Record<string, Record<string, GradePrices
       "256gb": { "loai-1": 1000000, "loai-2": 800000, "loai-3": 600000, "loai-4": 350000, "loai-5": 20000 },
     },
   },
+
+  vivo: {
+    "vivo-x80-pro": {
+      "256gb": { "loai-1": 4900000, "loai-2": 4400000, "loai-3": 3850000, "loai-4": 2000000, "loai-5": 100000 },
+    },
+    "vivo-v30e": {
+      "256gb": { "loai-1": 3600000, "loai-2": 3200000, "loai-3": 2750000, "loai-4": 1900000, "loai-5": 100000 },
+    },
+    "vivo-x80": {
+      "256gb": { "loai-1": 3400000, "loai-2": 3000000, "loai-3": 2550000, "loai-4": 1600000, "loai-5": 100000 },
+    },
+    "vivo-v29e": {
+      "256gb": { "loai-1": 2600000, "loai-2": 2200000, "loai-3": 1750000, "loai-4": 900000, "loai-5": 100000 },
+    },
+    "vivo-x50-pro": {
+      "256gb": { "loai-1": 2600000, "loai-2": 2200000, "loai-3": 1750000, "loai-4": 900000, "loai-5": 100000 },
+    },
+    "vivo-v27e": {
+      "256gb": { "loai-1": 2100000, "loai-2": 1700000, "loai-3": 1250000, "loai-4": 750000, "loai-5": 100000 },
+    },
+    "vivo-v25-pro": {
+      "128gb": { "loai-1": 1900000, "loai-2": 1600000, "loai-3": 1250000, "loai-4": 750000, "loai-5": 100000 },
+    },
+    "vivo-y36": {
+      "128gb": { "loai-1": 1700000, "loai-2": 1400000, "loai-3": 1050000, "loai-4": 600000, "loai-5": 100000 },
+    },
+    "vivo-v25e": {
+      "128gb": { "loai-1": 1600000, "loai-2": 1200000, "loai-3": 750000, "loai-4": 300000, "loai-5": 100000 },
+    },
+    "vivo-v25": {
+      "128gb": { "loai-1": 1500000, "loai-2": 1200000, "loai-3": 850000, "loai-4": 300000, "loai-5": 100000 },
+    },
+    "vivo-y35": {
+      "128gb": { "loai-1": 1400000, "loai-2": 1100000, "loai-3": 750000, "loai-4": 300000, "loai-5": 100000 },
+    },
+    "vivo-y22s": {
+      "128gb": { "loai-1": 1300000, "loai-2": 1000000, "loai-3": 650000, "loai-4": 300000, "loai-5": 100000 },
+    },
+    "vivo-y18s": {
+      "128gb": { "loai-1": 1300000, "loai-2": 1000000, "loai-3": 650000, "loai-4": 300000, "loai-5": 100000 },
+    },
+    "vivo-y17s": {
+      "128gb": { "loai-1": 1200000, "loai-2": 900000, "loai-3": 550000, "loai-4": 300000, "loai-5": 100000 },
+    },
+  },
+  realme: {
+    "realme-11-pro": {
+      "512gb": { "loai-1": 2000000, "loai-2": 1650000, "loai-3": 1300000, "loai-4": 850000, "loai-5": 150000 },
+      "256gb": { "loai-1": 1150000, "loai-2": 900000, "loai-3": 700000, "loai-4": 450000, "loai-5": 100000 },
+    },
+    "realme-14": {
+      "256gb": { "loai-1": 4500000, "loai-2": 3700000, "loai-3": 3100000, "loai-4": 2000000, "loai-5": 400000 },
+    },
+    "realme-14t": {
+      "256gb": { "loai-1": 4300000, "loai-2": 3600000, "loai-3": 2900000, "loai-4": 1900000, "loai-5": 350000 },
+    },
+    "realme-5-pro": {
+      "128gb": { "loai-1": 600000, "loai-2": 500000, "loai-3": 350000, "loai-4": 200000, "loai-5": 50000 },
+    },
+    "realme-5i": {
+      "64gb": { "loai-1": 450000, "loai-2": 350000, "loai-3": 250000, "loai-4": 150000, "loai-5": 50000 },
+    },
+    "realme-6": {
+      "128gb": { "loai-1": 600000, "loai-2": 500000, "loai-3": 300000, "loai-4": 250000, "loai-5": 50000 },
+    },
+    "realme-7": {
+      "128gb": { "loai-1": 900000, "loai-2": 700000, "loai-3": 60000, "loai-4": 300000, "loai-5": 50000 },
+    },
+    "realme-7-pro": {
+      "128gb": { "loai-1": 950000, "loai-2": 750000, "loai-3": 550000, "loai-4": 350000, "loai-5": 50000 },
+    },
+    "realme-8": {
+      "128gb": { "loai-1": 1200000, "loai-2": 1000000, "loai-3": 800000, "loai-4": 500000, "loai-5": 50000 },
+    },
+    "realme-8-pro": {
+      "128gb": { "loai-1": 1300000, "loai-2": 1000000, "loai-3": 800000, "loai-4": 500000, "loai-5": 50000 },
+    },
+    "realme-c65s": {
+      "256gb": { "loai-1": 1750000, "loai-2": 1450000, "loai-3": 1100000, "loai-4": 600000, "loai-5": 100000 },
+    },
+    "realme-c55": {
+      "256gb": { "loai-1": 1650000, "loai-2": 1350000, "loai-3": 1050000, "loai-4": 600000, "loai-5": 100000 },
+      "128gb": { "loai-1": 1250000, "loai-2": 950000, "loai-3": 650000, "loai-4": 300000, "loai-5": 100000 },
+    },
+    "realme-11": {
+      "256gb": { "loai-1": 1350000, "loai-2": 1100000, "loai-3": 850000, "loai-4": 550000, "loai-5": 100000 },
+      "128gb": { "loai-1": 1200000, "loai-2": 950000, "loai-3": 750000, "loai-4": 450000, "loai-5": 100000 },
+    },
+    "realme-10": {
+      "256gb": { "loai-1": 1350000, "loai-2": 1050000, "loai-3": 750000, "loai-4": 300000, "loai-5": 100000 },
+    },
+    "realme-c67": {
+      "128gb": { "loai-1": 1250000, "loai-2": 950000, "loai-3": 650000, "loai-4": 300000, "loai-5": 100000 },
+    },
+    "realme-c61": {
+      "128gb": { "loai-1": 1050000, "loai-2": 750000, "loai-3": 450000, "loai-4": 300000, "loai-5": 50000 },
+    },
+    "realme-c35": {
+      "128gb": { "loai-1": 1050000, "loai-2": 750000, "loai-3": 450000, "loai-4": 300000, "loai-5": 100000 },
+      "64gb": { "loai-1": 850000, "loai-2": 550000, "loai-3": 400000, "loai-4": 300000, "loai-5": 50000 },
+    },
+    "realme-note-60": {
+      "64gb": { "loai-1": 950000, "loai-2": 650000, "loai-3": 400000, "loai-4": 300000, "loai-5": 50000 },
+    },
+    "realme-c51": {
+      "128gb": { "loai-1": 950000, "loai-2": 650000, "loai-3": 400000, "loai-4": 300000, "loai-5": 50000 },
+      "64gb": { "loai-1": 750000, "loai-2": 550000, "loai-3": 400000, "loai-4": 300000, "loai-5": 50000 },
+    },
+    "realme-note-60x": {
+      "64gb": { "loai-1": 950000, "loai-2": 650000, "loai-3": 400000, "loai-4": 300000, "loai-5": 50000 },
+    },
+    "realme-c33": {
+      "32gb": { "loai-1": 750000, "loai-2": 550000, "loai-3": 400000, "loai-4": 300000, "loai-5": 50000 },
+    },
+    "realme-c60": {
+      "64gb": { "loai-1": 750000, "loai-2": 550000, "loai-3": 400000, "loai-4": 300000, "loai-5": 50000 },
+    },
+  },
+  honor: {
+    "honor-200": {
+      "512gb": { "loai-1": 4200000, "loai-2": 3500000, "loai-3": 2800000, "loai-4": 1800000, "loai-5": 350000 },
+      "256gb": { "loai-1": 3800000, "loai-2": 3100000, "loai-3": 2600000, "loai-4": 1700000, "loai-5": 350000 },
+    },
+    "honor-400": {
+      "512gb": { "loai-1": 6500000, "loai-2": 5500000, "loai-3": 5000000, "loai-4": 3000000, "loai-5": 700000 },
+      "256gb": { "loai-1": 6000000, "loai-2": 5000000, "loai-3": 4500000, "loai-4": 3000000, "loai-5": 700000 },
+    },
+    "honor-400-pro": {
+      "512gb": { "loai-1": 10000000, "loai-2": 8500000, "loai-3": 7700000, "loai-4": 4700000, "loai-5": 1000000 },
+    },
+    "honor-x5b": {
+      "64gb": { "loai-1": 800000, "loai-2": 600000, "loai-3": 450000, "loai-4": 250000, "loai-5": 50000 },
+    },
+    "honor-x5b-plus": {
+      "128gb": { "loai-1": 1000000, "loai-2": 800000, "loai-3": 600000, "loai-4": 400000, "loai-5": 50000 },
+    },
+    "honor-x6b": {
+      "128gb": { "loai-1": 13000000, "loai-2": 1000000, "loai-3": 800000, "loai-4": 600000, "loai-5": 50000 },
+    },
+    "honor-x6c": {
+      "256gb": { "loai-1": 2000000, "loai-2": 1600000, "loai-3": 1200000, "loai-4": 800000, "loai-5": 150000 },
+      "128gb": { "loai-1": 1800000, "loai-2": 1400000, "loai-3": 1000000, "loai-4": 700000, "loai-5": 150000 },
+    },
+    "honor-x7b": {
+      "256gb": { "loai-1": 1900000, "loai-2": 1600000, "loai-3": 1200000, "loai-4": 800000, "loai-5": 150000 },
+    },
+    "honor-x7c": {
+      "256gb": { "loai-1": 2300000, "loai-2": 1900000, "loai-3": 1500000, "loai-4": 1000000, "loai-5": 200000 },
+    },
+    "honor-x8c": {
+      "512gb": { "loai-1": 2900000, "loai-2": 2400000, "loai-3": 1800000, "loai-4": 1200000, "loai-5": 200000 },
+      "256gb": { "loai-1": 2700000, "loai-2": 2200000, "loai-3": 1600000, "loai-4": 1000000, "loai-5": 200000 },
+    },
+    "honor-x9c": {
+      "256gb": { "loai-1": 4100000, "loai-2": 3400000, "loai-3": 2800000, "loai-4": 1800000, "loai-5": 300000 },
+    },
+    "honor-x9c-smart": {
+      "256gb": { "loai-1": 4100000, "loai-2": 3400000, "loai-3": 2800000, "loai-4": 1800000, "loai-5": 300000 },
+    },
+    "honor-90": {
+      "512gb": { "loai-1": 4400000, "loai-2": 4000000, "loai-3": 3500000, "loai-4": 2500000, "loai-5": 300000 },
+      "256gb": { "loai-1": 4000000, "loai-2": 3500000, "loai-3": 3350000, "loai-4": 2310000, "loai-5": 300000 },
+    },
+    "honor-90-lite": {
+      "256gb": { "loai-1": 2900000, "loai-2": 2600000, "loai-3": 2300000, "loai-4": 1600000, "loai-5": 700000 },
+    },
+    "honor-x5-plus": {
+      "64gb": { "loai-1": 1680000, "loai-2": 1510000, "loai-3": 1260000, "loai-4": 920000, "loai-5": 340000 },
+    },
+    "honor-x6a": {
+      "128gb": { "loai-1": 1340000, "loai-2": 1180000, "loai-3": 1010000, "loai-4": 600000, "loai-5": 200000 },
+    },
+    "honor-x7a": {
+      "128gb": { "loai-1": 1600000, "loai-2": 1430000, "loai-3": 1240000, "loai-4": 800000, "loai-5": 320000 },
+    },
+    "honor-x8a": {
+      "128gb": { "loai-1": 1930000, "loai-2": 1730000, "loai-3": 1500000, "loai-4": 970000, "loai-5": 380000 },
+    },
+    "honor-x9a": {
+      "256gb": { "loai-1": 2520000, "loai-2": 2270000, "loai-3": 2060000, "loai-4": 1390000, "loai-5": 600000 },
+    },
+  },
+  oppo: {
+    "oppo-find-n2-flip": {
+      "256gb": { "loai-1": 3400000, "loai-2": 2800000, "loai-3": 2300000, "loai-4": 1500000, "loai-5": 300000 },
+      "512gb": { "loai-1": 3700000, "loai-2": 3100000, "loai-3": 2600000, "loai-4": 1800000, "loai-5": 300000 },
+    },
+    "oppo-a12": {
+      "64gb": { "loai-1": 300000, "loai-2": 250000, "loai-3": 200000, "loai-4": 100000, "loai-5": 50000 },
+      "32gb": { "loai-1": 280000, "loai-2": 220000, "loai-3": 180000, "loai-4": 100000, "loai-5": 50000 },
+    },
+    "oppo-a15": {
+      "32gb": { "loai-1": 370000, "loai-2": 320000, "loai-3": 220000, "loai-4": 120000, "loai-5": 50000 },
+    },
+    "oppo-a15s": {
+      "128gb": { "loai-1": 600000, "loai-2": 450000, "loai-3": 350000, "loai-4": 250000, "loai-5": 50000 },
+      "64gb": { "loai-1": 550000, "loai-2": 400000, "loai-3": 300000, "loai-4": 200000, "loai-5": 50000 },
+    },
+    "oppo-a16": {
+      "64gb": { "loai-1": 530000, "loai-2": 430000, "loai-3": 330000, "loai-4": 230000, "loai-5": 50000 },
+      "32gb": { "loai-1": 500000, "loai-2": 400000, "loai-3": 300000, "loai-4": 200000, "loai-5": 50000 },
+    },
+    "oppo-a16k": {
+      "128gb": { "loai-1": 620000, "loai-2": 470000, "loai-3": 370000, "loai-4": 270000, "loai-5": 140000 },
+      "32gb": { "loai-1": 550000, "loai-2": 400000, "loai-3": 300000, "loai-4": 200000, "loai-5": 50000 },
+      "64gb": { "loai-1": 580000, "loai-2": 430000, "loai-3": 330000, "loai-4": 230000, "loai-5": 50000 },
+    },
+    "oppo-a17": {
+      "64gb": { "loai-1": 680000, "loai-2": 580000, "loai-3": 480000, "loai-4": 230000, "loai-5": 50000 },
+    },
+    "oppo-a17k": {
+      "64gb": { "loai-1": 650000, "loai-2": 550000, "loai-3": 450000, "loai-4": 200000, "loai-5": 50000 },
+    },
+    "oppo-a18": {
+      "64gb": { "loai-1": 1350000, "loai-2": 1050000, "loai-3": 750000, "loai-4": 450000, "loai-5": 450000 },
+      "128gb": { "loai-1": 1400000, "loai-2": 1100000, "loai-3": 800000, "loai-4": 500000, "loai-5": 500000 },
+    },
+    "oppo-a31": {
+      "128gb": { "loai-1": 600000, "loai-2": 550000, "loai-3": 350000, "loai-4": 230000, "loai-5": 50000 },
+      "64gb": { "loai-1": 480000, "loai-2": 390000, "loai-3": 290000, "loai-4": 200000, "loai-5": 50000 },
+    },
+    "oppo-a3": {
+      "256gb": { "loai-1": 2300000, "loai-2": 1800000, "loai-3": 1400000, "loai-4": 900000, "loai-5": 200000 },
+      "128gb": { "loai-1": 2000000, "loai-2": 1500000, "loai-3": 1100000, "loai-4": 750000, "loai-5": 150000 },
+    },
+    "oppo-a3x": {
+      "128gb": { "loai-1": 1200000, "loai-2": 900000, "loai-3": 700000, "loai-4": 400000, "loai-5": 50000 },
+      "64gb": { "loai-1": 1100000, "loai-2": 850000, "loai-3": 650000, "loai-4": 350000, "loai-5": 50000 },
+    },
+    "oppo-a38": {
+      "128gb": { "loai-1": 1300000, "loai-2": 1100000, "loai-3": 800000, "loai-4": 600000, "loai-5": 50000 },
+    },
+    "oppo-a5-2020": {
+      "128gb": { "loai-1": 600000, "loai-2": 500000, "loai-3": 350000, "loai-4": 200000, "loai-5": 50000 },
+      "64gb": { "loai-1": 500000, "loai-2": 400000, "loai-3": 250000, "loai-4": 120000, "loai-5": 50000 },
+      "32gb": { "loai-1": 450000, "loai-2": 350000, "loai-3": 200000, "loai-4": 100000, "loai-5": 50000 },
+    },
+    "oppo-a5-pro": {
+      "256gb": { "loai-1": 2400000, "loai-2": 2000000, "loai-3": 1500000, "loai-4": 1000000, "loai-5": 200000 },
+      "128gb": { "loai-1": 2200000, "loai-2": 1800000, "loai-3": 1300000, "loai-4": 800000, "loai-5": 150000 },
+    },
+    "oppo-a52": {
+      "128gb": { "loai-1": 750000, "loai-2": 650000, "loai-3": 550000, "loai-4": 200000, "loai-5": 50000 },
+      "64gb": { "loai-1": 600000, "loai-2": 500000, "loai-3": 400000, "loai-4": 150000, "loai-5": 50000 },
+    },
+    "oppo-a53-2020": {
+      "128gb": { "loai-1": 900000, "loai-2": 700000, "loai-3": 600000, "loai-4": 300000, "loai-5": 50000 },
+      "64gb": { "loai-1": 800000, "loai-2": 600000, "loai-3": 500000, "loai-4": 250000, "loai-5": 50000 },
+    },
+    "oppo-a54": {
+      "128gb": { "loai-1": 950000, "loai-2": 850000, "loai-3": 750000, "loai-4": 550000, "loai-5": 50000 },
+      "64gb": { "loai-1": 900000, "loai-2": 800000, "loai-3": 700000, "loai-4": 500000, "loai-5": 50000 },
+    },
+    "oppo-a55": {
+      "128gb": { "loai-1": 1000000, "loai-2": 900000, "loai-3": 800000, "loai-4": 650000, "loai-5": 50000 },
+      "64gb": { "loai-1": 950000, "loai-2": 850000, "loai-3": 750000, "loai-4": 600000, "loai-5": 50000 },
+    },
+    "oppo-a57-2022": {
+      "128gb": { "loai-1": 750000, "loai-2": 650000, "loai-3": 550000, "loai-4": 300000, "loai-5": 50000 },
+      "64gb": { "loai-1": 650000, "loai-2": 550000, "loai-3": 450000, "loai-4": 200000, "loai-5": 50000 },
+    },
+    "oppo-a58": {
+      "256gb": { "loai-1": 950000, "loai-2": 850000, "loai-3": 750000, "loai-4": 500000, "loai-5": 50000 },
+      "128gb": { "loai-1": 800000, "loai-2": 700000, "loai-3": 600000, "loai-4": 350000, "loai-5": 50000 },
+    },
+    "oppo-a5i": {
+      "64gb": { "loai-1": 1600000, "loai-2": 1400000, "loai-3": 1000000, "loai-4": 700000, "loai-5": 100000 },
+    },
+    "oppo-a5i-pro": {
+      "128gb": { "loai-1": 1800000, "loai-2": 1600000, "loai-3": 1200000, "loai-4": 900000, "loai-5": 100000 },
+    },
+    "oppo-a5x": {
+      "128gb": { "loai-1": 2100000, "loai-2": 1700000, "loai-3": 1300000, "loai-4": 900000, "loai-5": 150000 },
+      "64gb": { "loai-1": 1850000, "loai-2": 1450000, "loai-3": 1050000, "loai-4": 700000, "loai-5": 150000 },
+    },
+    "oppo-a5s-ax5s": {
+      "64gb": { "loai-1": 370000, "loai-2": 290000, "loai-3": 230000, "loai-4": 160000, "loai-5": 50000 },
+      "32gb": { "loai-1": 360000, "loai-2": 290000, "loai-3": 220000, "loai-4": 150000, "loai-5": 50000 },
+    },
+    "oppo-a60": {
+      "128gb": { "loai-1": 1800000, "loai-2": 1500000, "loai-3": 1100000, "loai-4": 800000, "loai-5": 150000 },
+      "256gb": { "loai-1": 1600000, "loai-2": 1300000, "loai-3": 900000, "loai-4": 700000, "loai-5": 150000 },
+    },
+    "oppo-a7": {
+      "64gb": { "loai-1": 400000, "loai-2": 330000, "loai-3": 250000, "loai-4": 170000, "loai-5": 50000 },
+      "32gb": { "loai-1": 330000, "loai-2": 260000, "loai-3": 200000, "loai-4": 140000, "loai-5": 50000 },
+    },
+    "oppo-a73": {
+      "128gb": { "loai-1": 950000, "loai-2": 850000, "loai-3": 750000, "loai-4": 600000, "loai-5": 50000 },
+    },
+    "oppo-a74": {
+      "128gb": { "loai-1": 1100000, "loai-2": 1000000, "loai-3": 900000, "loai-4": 750000, "loai-5": 50000 },
+    },
+    "oppo-a76": {
+      "128gb": { "loai-1": 1200000, "loai-2": 1000000, "loai-3": 700000, "loai-4": 400000, "loai-5": 100000 },
+    },
+    "oppo-a77s": {
+      "128gb": { "loai-1": 1700000, "loai-2": 1400000, "loai-3": 1100000, "loai-4": 700000, "loai-5": 150000 },
+    },
+    "oppo-a78": {
+      "128gb": { "loai-1": 1050000, "loai-2": 950000, "loai-3": 850000, "loai-4": 700000, "loai-5": 150000 },
+      "256gb": { "loai-1": 1250000, "loai-2": 1150000, "loai-3": 1050000, "loai-4": 700000, "loai-5": 150000 },
+    },
+    "oppo-a79": {
+      "256gb": { "loai-1": 1900000, "loai-2": 1600000, "loai-3": 1200000, "loai-4": 800000, "loai-5": 150000 },
+    },
+    "oppo-a9-2020": {
+      "128gb": { "loai-1": 800000, "loai-2": 600000, "loai-3": 500000, "loai-4": 300000, "loai-5": 100000 },
+    },
+    "oppo-a92": {
+      "128gb": { "loai-1": 1000000, "loai-2": 700000, "loai-3": 600000, "loai-4": 400000, "loai-5": 50000 },
+    },
+    "oppo-a93": {
+      "128gb": { "loai-1": 1100000, "loai-2": 850000, "loai-3": 650000, "loai-4": 450000, "loai-5": 50000 },
+    },
+    "oppo-a94": {
+      "128gb": { "loai-1": 1450000, "loai-2": 1150000, "loai-3": 90000, "loai-4": 600000, "loai-5": 50000 },
+    },
+    "oppo-a95": {
+      "256gb": { "loai-1": 1700000, "loai-2": 1300000, "loai-3": 1000000, "loai-4": 700000, "loai-5": 150000 },
+      "128gb": { "loai-1": 1600000, "loai-2": 1200000, "loai-3": 900000, "loai-4": 600000, "loai-5": 150000 },
+    },
+    "oppo-a96": {
+      "256gb": { "loai-1": 2100000, "loai-2": 1800000, "loai-3": 1300000, "loai-4": 1000000, "loai-5": 150000 },
+      "128gb": { "loai-1": 1850000, "loai-2": 1550000, "loai-3": 1050000, "loai-4": 750000, "loai-5": 150000 },
+    },
+    "oppo-a98": {
+      "256gb": { "loai-1": 1850000, "loai-2": 1550000, "loai-3": 1050000, "loai-4": 750000, "loai-5": 150000 },
+    },
+    "oppo-f11": {
+      "128gb": { "loai-1": 610000, "loai-2": 500000, "loai-3": 370000, "loai-4": 240000, "loai-5": 50000 },
+      "64gb": { "loai-1": 570000, "loai-2": 450000, "loai-3": 340000, "loai-4": 220000, "loai-5": 50000 },
+    },
+    "oppo-f11-pro": {
+      "128gb": { "loai-1": 900000, "loai-2": 760000, "loai-3": 600000, "loai-4": 370000, "loai-5": 50000 },
+      "64gb": { "loai-1": 650000, "loai-2": 520000, "loai-3": 390000, "loai-4": 250000, "loai-5": 50000 },
+    },
+    "oppo-f7": {
+      "128gb": { "loai-1": 530000, "loai-2": 420000, "loai-3": 320000, "loai-4": 200000, "loai-5": 50000 },
+      "64gb": { "loai-1": 500000, "loai-2": 390000, "loai-3": 300000, "loai-4": 190000, "loai-5": 50000 },
+    },
+    "oppo-f9": {
+      "64gb": { "loai-1": 570000, "loai-2": 450000, "loai-3": 340000, "loai-4": 220000, "loai-5": 50000 },
+    },
+    "oppo-find-n3-16gb-1t": {
+      "1t": { "loai-1": 13700000, "loai-2": 11800000, "loai-3": 10800000, "loai-4": 7100000, "loai-5": 2000000 },
+    },
+    "oppo-find-n3": {
+      "512gb": { "loai-1": 13500000, "loai-2": 11600000, "loai-3": 10600000, "loai-4": 6900000, "loai-5": 1800000 },
+    },
+    "oppo-find-n3-flip": {
+      "512gb": { "loai-1": 5600000, "loai-2": 4700000, "loai-3": 4400000, "loai-4": 2700000, "loai-5": 600000 },
+      "256gb": { "loai-1": 5400000, "loai-2": 4500000, "loai-3": 4200000, "loai-4": 2500000, "loai-5": 600000 },
+    },
+    "oppo-find-x": {
+      "256gb": { "loai-1": 1000000, "loai-2": 800000, "loai-3": 600000, "loai-4": 350000, "loai-5": 50000 },
+      "128gb": { "loai-1": 800000, "loai-2": 600000, "loai-3": 400000, "loai-4": 150000, "loai-5": 50000 },
+    },
+    "oppo-find-x2": {
+      "256gb": { "loai-1": 1500000, "loai-2": 1200000, "loai-3": 900000, "loai-4": 500000, "loai-5": 50000 },
+      "128gb": { "loai-1": 1300000, "loai-2": 1000000, "loai-3": 700000, "loai-4": 400000, "loai-5": 50000 },
+    },
+    "oppo-find-x2-pro": {
+      "256gb": { "loai-1": 1700000, "loai-2": 1400000, "loai-3": 1100000, "loai-4": 700000, "loai-5": 50000 },
+      "512gb": { "loai-1": 1800000, "loai-2": 1500000, "loai-3": 1200000, "loai-4": 800000, "loai-5": 50000 },
+    },
+    "oppo-find-x3-pro": {
+      "256gb": { "loai-1": 2200000, "loai-2": 1900000, "loai-3": 1700000, "loai-4": 1300000, "loai-5": 200000 },
+    },
+    "oppo-find-x5-pro": {
+      "512gb": { "loai-1": 4100000, "loai-2": 3400000, "loai-3": 2800000, "loai-4": 1900000, "loai-5": 350000 },
+      "256gb": { "loai-1": 3850000, "loai-2": 3150000, "loai-3": 2550000, "loai-4": 1650000, "loai-5": 350000 },
+    },
+    "oppo-find-x8": {
+      "512gb": { "loai-1": 8900000, "loai-2": 7800000, "loai-3": 7000000, "loai-4": 4000000, "loai-5": 900000 },
+    },
+    "oppo-find-x8-pro": {
+      "512gb": { "loai-1": 11000000, "loai-2": 9700000, "loai-3": 8800000, "loai-4": 5700000, "loai-5": 1200000 },
+    },
+    "oppo-r17-pro": {
+      "128gb": { "loai-1": 1170000, "loai-2": 940000, "loai-3": 690000, "loai-4": 330000, "loai-5": 200000 },
+    },
+    "oppo-reno": {
+      "256gb": { "loai-1": 1240000, "loai-2": 1000000, "loai-3": 740000, "loai-4": 360000, "loai-5": 200000 },
+    },
+    "oppo-reno-10x-zoom": {
+      "256gb": { "loai-1": 1630000, "loai-2": 1380000, "loai-3": 1100000, "loai-4": 720000, "loai-5": 300000 },
+      "128gb": { "loai-1": 1720000, "loai-2": 1450000, "loai-3": 1160000, "loai-4": 770000, "loai-5": 300000 },
+    },
+    "oppo-reno10": {
+      "512gb": { "loai-1": 2600000, "loai-2": 2200000, "loai-3": 1700000, "loai-4": 1200000, "loai-5": 200000 },
+      "256gb": { "loai-1": 2500000, "loai-2": 2100000, "loai-3": 1600000, "loai-4": 1100000, "loai-5": 200000 },
+      "128gb": { "loai-1": 2300000, "loai-2": 1900000, "loai-3": 1400000, "loai-4": 900000, "loai-5": 200000 },
+    },
+    "oppo-reno10-pro": {
+      "512gb": { "loai-1": 3200000, "loai-2": 2700000, "loai-3": 2100000, "loai-4": 1500000, "loai-5": 250000 },
+      "256gb": { "loai-1": 3150000, "loai-2": 2650000, "loai-3": 2050000, "loai-4": 1450000, "loai-5": 250000 },
+    },
+    "oppo-reno11f": {
+      "256gb": { "loai-1": 2900000, "loai-2": 2500000, "loai-3": 1850000, "loai-4": 1250000, "loai-5": 200000 },
+    },
+    "oppo-reno11-pro": {
+      "512gb": { "loai-1": 4000000, "loai-2": 3200000, "loai-3": 2600000, "loai-4": 1600000, "loai-5": 300000 },
+    },
+    "oppo-reno12": {
+      "512gb": { "loai-1": 3800000, "loai-2": 3100000, "loai-3": 2600000, "loai-4": 1700000, "loai-5": 300000 },
+      "256gb": { "loai-1": 3650000, "loai-2": 2950000, "loai-3": 2450000, "loai-4": 1550000, "loai-5": 250000 },
+    },
+    "oppo-reno12f": {
+      "256gb": { "loai-1": 2650000, "loai-2": 2150000, "loai-3": 1650000, "loai-4": 1100000, "loai-5": 200000 },
+    },
+    "oppo-reno12-pro": {
+      "512gb": { "loai-1": 5100000, "loai-2": 4200000, "loai-3": 3400000, "loai-4": 2200000, "loai-5": 500000 },
+    },
+    "oppo-reno13": {
+      "512gb": { "loai-1": 5750000, "loai-2": 4900000, "loai-3": 4500000, "loai-4": 2700000, "loai-5": 500000 },
+      "256gb": { "loai-1": 3800000, "loai-2": 3150000, "loai-3": 2600000, "loai-4": 1700000, "loai-5": 350000 },
+    },
+    "oppo-reno13f": {
+      "512gb": { "loai-1": 4600000, "loai-2": 3800000, "loai-3": 3100000, "loai-4": 2000000, "loai-5": 350000 },
+      "256gb": { "loai-1": 4000000, "loai-2": 3300000, "loai-3": 2700000, "loai-4": 1750000, "loai-5": 350000 },
+    },
+    "oppo-reno13-pro": {
+      "512gb": { "loai-1": 6250000, "loai-2": 5350000, "loai-3": 4850000, "loai-4": 2900000, "loai-5": 600000 },
+    },
+    "oppo-reno2": {
+      "256gb": { "loai-1": 750000, "loai-2": 600000, "loai-3": 450000, "loai-4": 250000, "loai-5": 50000 },
+      "128gb": { "loai-1": 720000, "loai-2": 570000, "loai-3": 420000, "loai-4": 220000, "loai-5": 50000 },
+    },
+    "oppo-reno2-f": {
+      "256gb": { "loai-1": 800000, "loai-2": 650000, "loai-3": 500000, "loai-4": 300000, "loai-5": 50000 },
+      "128gb": { "loai-1": 760000, "loai-2": 610000, "loai-3": 460000, "loai-4": 260000, "loai-5": 50000 },
+    },
+    "oppo-reno2-z": {
+      "128gb": { "loai-1": 800000, "loai-2": 650000, "loai-3": 500000, "loai-4": 300000, "loai-5": 50000 },
+    },
+    "oppo-reno3": {
+      "128gb": { "loai-1": 650000, "loai-2": 500000, "loai-3": 350000, "loai-4": 300000, "loai-5": 50000 },
+    },
+    "oppo-reno3-pro": {
+      "256gb": { "loai-1": 800000, "loai-2": 650000, "loai-3": 500000, "loai-4": 300000, "loai-5": 50000 },
+      "128gb": { "loai-1": 750000, "loai-2": 600000, "loai-3": 450000, "loai-4": 250000, "loai-5": 50000 },
+    },
+    "oppo-reno4": {
+      "128gb": { "loai-1": 600000, "loai-2": 450000, "loai-3": 350000, "loai-4": 200000, "loai-5": 50000 },
+      "256gb": { "loai-1": 650000, "loai-2": 500000, "loai-3": 400000, "loai-4": 250000, "loai-5": 50000 },
+    },
+    "oppo-reno4-pro": {
+      "256gb": { "loai-1": 650000, "loai-2": 500000, "loai-3": 400000, "loai-4": 250000, "loai-5": 50000 },
+      "128gb": { "loai-1": 550000, "loai-2": 400000, "loai-3": 300000, "loai-4": 150000, "loai-5": 50000 },
+    },
+    "oppo-reno4-z": {
+      "128gb": { "loai-1": 580000, "loai-2": 430000, "loai-3": 330000, "loai-4": 180000, "loai-5": 50000 },
+    },
+    "oppo-reno5": {
+      "128gb": { "loai-1": 780000, "loai-2": 630000, "loai-3": 480000, "loai-4": 330000, "loai-5": 50000 },
+      "256gb": { "loai-1": 830000, "loai-2": 680000, "loai-3": 530000, "loai-4": 380000, "loai-5": 50000 },
+    },
+    "oppo-reno5-pro": {
+      "256gb": { "loai-1": 930000, "loai-2": 780000, "loai-3": 630000, "loai-4": 480000, "loai-5": 50000 },
+      "128gb": { "loai-1": 900000, "loai-2": 750000, "loai-3": 600000, "loai-4": 450000, "loai-5": 50000 },
+    },
+    "oppo-reno6": {
+      "128gb": { "loai-1": 1170000, "loai-2": 920000, "loai-3": 720000, "loai-4": 520000, "loai-5": 100000 },
+      "256gb": { "loai-1": 1200000, "loai-2": 950000, "loai-3": 750000, "loai-4": 550000, "loai-5": 100000 },
+    },
+    "oppo-reno6-pro": {
+      "256gb": { "loai-1": 1800000, "loai-2": 1500000, "loai-3": 1150000, "loai-4": 750000, "loai-5": 150000 },
+      "128gb": { "loai-1": 1750000, "loai-2": 1450000, "loai-3": 1100000, "loai-4": 700000, "loai-5": 150000 },
+    },
+    "oppo-reno6-z": {
+      "256gb": { "loai-1": 980000, "loai-2": 780000, "loai-3": 630000, "loai-4": 400000, "loai-5": 50000 },
+      "128gb": { "loai-1": 850000, "loai-2": 650000, "loai-3": 500000, "loai-4": 300000, "loai-5": 50000 },
+    },
+    "oppo-reno7": {
+      "256gb": { "loai-1": 1400000, "loai-2": 1100000, "loai-3": 820000, "loai-4": 530000, "loai-5": 100000 },
+      "128gb": { "loai-1": 1350000, "loai-2": 1050000, "loai-3": 770000, "loai-4": 500000, "loai-5": 100000 },
+    },
+    "oppo-reno7-pro": {
+      "256gb": { "loai-1": 2100000, "loai-2": 1710000, "loai-3": 1290000, "loai-4": 820000, "loai-5": 200000 },
+    },
+    "oppo-reno7-z": {
+      "128gb": { "loai-1": 1050000, "loai-2": 810000, "loai-3": 630000, "loai-4": 400000, "loai-5": 50000 },
+    },
+    "oppo-reno8": {
+      "256gb": { "loai-1": 1700000, "loai-2": 1400000, "loai-3": 1050000, "loai-4": 700000, "loai-5": 100000 },
+      "128gb": { "loai-1": 1620000, "loai-2": 1320000, "loai-3": 970000, "loai-4": 620000, "loai-5": 100000 },
+    },
+    "oppo-reno8-pro": {
+      "256gb": { "loai-1": 2150000, "loai-2": 1800000, "loai-3": 1350000, "loai-4": 850000, "loai-5": 200000 },
+    },
+    "oppo-reno8-t": {
+      "256gb": { "loai-1": 1800000, "loai-2": 1500000, "loai-3": 1150000, "loai-4": 750000, "loai-5": 150000 },
+      "128gb": { "loai-1": 1700000, "loai-2": 1400000, "loai-3": 1050000, "loai-4": 650000, "loai-5": 150000 },
+    },
+    "oppo-reno8-z": {
+      "256gb": { "loai-1": 1650000, "loai-2": 1350000, "loai-3": 1050000, "loai-4": 700000, "loai-5": 150000 },
+      "128gb": { "loai-1": 1600000, "loai-2": 1300000, "loai-3": 1000000, "loai-4": 650000, "loai-5": 150000 },
+    },
+  },
 };
 
 // ─── Condition grades (Loại 1–5) ─────────────────────────────────────────────
@@ -955,25 +1459,181 @@ const MODEL_META: Record<string, { displayName: string; year: string; brand: str
   "xiaomi-redmi-13c":              { displayName: "Redmi 13C",           year: "2023", brand: "xiaomi" },
   "xiaomi-redmi-12":               { displayName: "Redmi 12",            year: "2023", brand: "xiaomi" },
   "xiaomi-redmi-10":               { displayName: "Redmi 10",            year: "2021", brand: "xiaomi" },
+
+  // Vivo
+  "vivo-x80-pro": { displayName: "Vivo X80 Pro", year: "2024", brand: "vivo" },
+  "vivo-v30e": { displayName: "Vivo V30E", year: "2024", brand: "vivo" },
+  "vivo-x80": { displayName: "Vivo X80", year: "2024", brand: "vivo" },
+  "vivo-v29e": { displayName: "Vivo V29E", year: "2024", brand: "vivo" },
+  "vivo-x50-pro": { displayName: "Vivo X50 Pro", year: "2024", brand: "vivo" },
+  "vivo-v27e": { displayName: "Vivo V27E", year: "2024", brand: "vivo" },
+  "vivo-v25-pro": { displayName: "Vivo V25 Pro", year: "2024", brand: "vivo" },
+  "vivo-y36": { displayName: "Vivo Y36", year: "2024", brand: "vivo" },
+  "vivo-v25e": { displayName: "Vivo V25E", year: "2024", brand: "vivo" },
+  "vivo-v25": { displayName: "Vivo V25", year: "2024", brand: "vivo" },
+  "vivo-y35": { displayName: "Vivo Y35", year: "2024", brand: "vivo" },
+  "vivo-y22s": { displayName: "Vivo Y22S", year: "2024", brand: "vivo" },
+  "vivo-y18s": { displayName: "Vivo Y18S", year: "2024", brand: "vivo" },
+  "vivo-y17s": { displayName: "Vivo Y17S", year: "2024", brand: "vivo" },
+  // Realme
+  "realme-11-pro": { displayName: "Realme 11 Pro+", year: "2024", brand: "realme" },
+  "realme-14": { displayName: "Realme 14", year: "2024", brand: "realme" },
+  "realme-14t": { displayName: "Realme 14T", year: "2024", brand: "realme" },
+  "realme-5-pro": { displayName: "Realme 5 Pro", year: "2024", brand: "realme" },
+  "realme-5i": { displayName: "Realme 5i", year: "2024", brand: "realme" },
+  "realme-6": { displayName: "Realme 6", year: "2024", brand: "realme" },
+  "realme-7": { displayName: "Realme 7", year: "2024", brand: "realme" },
+  "realme-7-pro": { displayName: "Realme 7 Pro", year: "2024", brand: "realme" },
+  "realme-8": { displayName: "Realme 8", year: "2024", brand: "realme" },
+  "realme-8-pro": { displayName: "Realme 8 Pro", year: "2024", brand: "realme" },
+  "realme-c65s": { displayName: "Realme C65S", year: "2024", brand: "realme" },
+  "realme-c55": { displayName: "Realme C55", year: "2024", brand: "realme" },
+  "realme-11": { displayName: "Realme 11", year: "2024", brand: "realme" },
+  "realme-10": { displayName: "Realme 10", year: "2024", brand: "realme" },
+  "realme-c67": { displayName: "Realme C67", year: "2024", brand: "realme" },
+  "realme-c61": { displayName: "Realme C61", year: "2024", brand: "realme" },
+  "realme-c35": { displayName: "Realme C35", year: "2024", brand: "realme" },
+  "realme-note-60": { displayName: "Realme Note 60", year: "2024", brand: "realme" },
+  "realme-c51": { displayName: "Realme C51", year: "2024", brand: "realme" },
+  "realme-note-60x": { displayName: "Realme Note 60X", year: "2024", brand: "realme" },
+  "realme-c33": { displayName: "Realme C33", year: "2024", brand: "realme" },
+  "realme-c60": { displayName: "Realme C60", year: "2024", brand: "realme" },
+  // Honor
+  "honor-200": { displayName: "Honor 200", year: "2024", brand: "honor" },
+  "honor-400": { displayName: "Honor 400", year: "2024", brand: "honor" },
+  "honor-400-pro": { displayName: "Honor 400 PRO", year: "2024", brand: "honor" },
+  "honor-x5b": { displayName: "Honor X5B", year: "2024", brand: "honor" },
+  "honor-x5b-plus": { displayName: "Honor X5B Plus", year: "2024", brand: "honor" },
+  "honor-x6b": { displayName: "Honor X6B", year: "2024", brand: "honor" },
+  "honor-x6c": { displayName: "Honor X6C", year: "2024", brand: "honor" },
+  "honor-x7b": { displayName: "Honor X7B", year: "2024", brand: "honor" },
+  "honor-x7c": { displayName: "Honor X7C", year: "2024", brand: "honor" },
+  "honor-x8c": { displayName: "Honor X8C", year: "2024", brand: "honor" },
+  "honor-x9c": { displayName: "Honor X9C", year: "2024", brand: "honor" },
+  "honor-x9c-smart": { displayName: "Honor X9C Smart", year: "2024", brand: "honor" },
+  "honor-90": { displayName: "Honor 90", year: "2024", brand: "honor" },
+  "honor-90-lite": { displayName: "Honor 90 Lite", year: "2024", brand: "honor" },
+  "honor-x5-plus": { displayName: "Honor X5 Plus", year: "2024", brand: "honor" },
+  "honor-x6a": { displayName: "Honor X6a", year: "2024", brand: "honor" },
+  "honor-x7a": { displayName: "Honor X7a", year: "2024", brand: "honor" },
+  "honor-x8a": { displayName: "Honor X8a", year: "2024", brand: "honor" },
+  "honor-x9a": { displayName: "Honor X9a", year: "2024", brand: "honor" },
+  // Oppo
+  "oppo-find-n2-flip": { displayName: "Oppo FIND N2 FLIP", year: "2024", brand: "oppo" },
+  "oppo-a12": { displayName: "Oppo A12", year: "2024", brand: "oppo" },
+  "oppo-a15": { displayName: "Oppo A15", year: "2024", brand: "oppo" },
+  "oppo-a15s": { displayName: "Oppo A15S", year: "2024", brand: "oppo" },
+  "oppo-a16": { displayName: "Oppo A16", year: "2024", brand: "oppo" },
+  "oppo-a16k": { displayName: "Oppo A16K", year: "2024", brand: "oppo" },
+  "oppo-a17": { displayName: "Oppo A17", year: "2024", brand: "oppo" },
+  "oppo-a17k": { displayName: "Oppo A17K", year: "2024", brand: "oppo" },
+  "oppo-a18": { displayName: "Oppo A18", year: "2024", brand: "oppo" },
+  "oppo-a31": { displayName: "Oppo A31", year: "2024", brand: "oppo" },
+  "oppo-a3": { displayName: "Oppo A3", year: "2024", brand: "oppo" },
+  "oppo-a3x": { displayName: "Oppo A3X", year: "2024", brand: "oppo" },
+  "oppo-a38": { displayName: "Oppo A38", year: "2024", brand: "oppo" },
+  "oppo-a5-2020": { displayName: "Oppo A5 2020", year: "2024", brand: "oppo" },
+  "oppo-a5-pro": { displayName: "Oppo A5 Pro", year: "2024", brand: "oppo" },
+  "oppo-a52": { displayName: "Oppo A52", year: "2024", brand: "oppo" },
+  "oppo-a53-2020": { displayName: "Oppo A53 (2020)", year: "2024", brand: "oppo" },
+  "oppo-a54": { displayName: "Oppo A54", year: "2024", brand: "oppo" },
+  "oppo-a55": { displayName: "Oppo A55", year: "2024", brand: "oppo" },
+  "oppo-a57-2022": { displayName: "Oppo A57 (2022)", year: "2024", brand: "oppo" },
+  "oppo-a58": { displayName: "Oppo A58", year: "2024", brand: "oppo" },
+  "oppo-a5i": { displayName: "Oppo A5i", year: "2024", brand: "oppo" },
+  "oppo-a5i-pro": { displayName: "Oppo A5i Pro", year: "2024", brand: "oppo" },
+  "oppo-a5x": { displayName: "Oppo A5X", year: "2024", brand: "oppo" },
+  "oppo-a5s-ax5s": { displayName: "Oppo A5s (AX5s)", year: "2024", brand: "oppo" },
+  "oppo-a60": { displayName: "Oppo A60", year: "2024", brand: "oppo" },
+  "oppo-a7": { displayName: "Oppo A7", year: "2024", brand: "oppo" },
+  "oppo-a73": { displayName: "Oppo A73", year: "2024", brand: "oppo" },
+  "oppo-a74": { displayName: "Oppo A74", year: "2024", brand: "oppo" },
+  "oppo-a76": { displayName: "Oppo A76", year: "2024", brand: "oppo" },
+  "oppo-a77s": { displayName: "Oppo A77s", year: "2024", brand: "oppo" },
+  "oppo-a78": { displayName: "Oppo A78", year: "2024", brand: "oppo" },
+  "oppo-a79": { displayName: "Oppo A79", year: "2024", brand: "oppo" },
+  "oppo-a9-2020": { displayName: "Oppo A9 (2020)", year: "2024", brand: "oppo" },
+  "oppo-a92": { displayName: "Oppo A92", year: "2024", brand: "oppo" },
+  "oppo-a93": { displayName: "Oppo A93", year: "2024", brand: "oppo" },
+  "oppo-a94": { displayName: "Oppo A94", year: "2024", brand: "oppo" },
+  "oppo-a95": { displayName: "Oppo A95", year: "2024", brand: "oppo" },
+  "oppo-a96": { displayName: "Oppo A96", year: "2024", brand: "oppo" },
+  "oppo-a98": { displayName: "Oppo A98", year: "2024", brand: "oppo" },
+  "oppo-f11": { displayName: "Oppo F11", year: "2024", brand: "oppo" },
+  "oppo-f11-pro": { displayName: "Oppo F11 Pro", year: "2024", brand: "oppo" },
+  "oppo-f7": { displayName: "Oppo F7", year: "2024", brand: "oppo" },
+  "oppo-f9": { displayName: "Oppo F9", year: "2024", brand: "oppo" },
+  "oppo-find-n3-16gb-1t": { displayName: "Oppo Find N3 16GB/1T", year: "2024", brand: "oppo" },
+  "oppo-find-n3": { displayName: "Oppo Find N3", year: "2024", brand: "oppo" },
+  "oppo-find-n3-flip": { displayName: "Oppo Find N3 Flip", year: "2024", brand: "oppo" },
+  "oppo-find-x": { displayName: "Oppo Find X", year: "2024", brand: "oppo" },
+  "oppo-find-x2": { displayName: "Oppo FIND X2", year: "2024", brand: "oppo" },
+  "oppo-find-x2-pro": { displayName: "Oppo FIND X2 PRO", year: "2024", brand: "oppo" },
+  "oppo-find-x3-pro": { displayName: "Oppo FIND X3 PRO", year: "2024", brand: "oppo" },
+  "oppo-find-x5-pro": { displayName: "Oppo FIND X5 PRO", year: "2024", brand: "oppo" },
+  "oppo-find-x8": { displayName: "Oppo FIND X8", year: "2024", brand: "oppo" },
+  "oppo-find-x8-pro": { displayName: "Oppo FIND X8 PRO", year: "2024", brand: "oppo" },
+  "oppo-r17-pro": { displayName: "Oppo R17 Pro", year: "2024", brand: "oppo" },
+  "oppo-reno": { displayName: "Oppo Reno", year: "2024", brand: "oppo" },
+  "oppo-reno-10x-zoom": { displayName: "Oppo Reno 10x Zoom", year: "2024", brand: "oppo" },
+  "oppo-reno10": { displayName: "Oppo Reno10", year: "2024", brand: "oppo" },
+  "oppo-reno10-pro": { displayName: "Oppo Reno10 Pro", year: "2024", brand: "oppo" },
+  "oppo-reno11f": { displayName: "Oppo Reno11F", year: "2024", brand: "oppo" },
+  "oppo-reno11-pro": { displayName: "Oppo Reno11 Pro", year: "2024", brand: "oppo" },
+  "oppo-reno12": { displayName: "Oppo Reno12", year: "2024", brand: "oppo" },
+  "oppo-reno12f": { displayName: "Oppo Reno12F", year: "2024", brand: "oppo" },
+  "oppo-reno12-pro": { displayName: "Oppo Reno12 PRO", year: "2024", brand: "oppo" },
+  "oppo-reno13": { displayName: "Oppo Reno13", year: "2024", brand: "oppo" },
+  "oppo-reno13f": { displayName: "Oppo Reno13F", year: "2024", brand: "oppo" },
+  "oppo-reno13-pro": { displayName: "Oppo Reno13 PRO", year: "2024", brand: "oppo" },
+  "oppo-reno2": { displayName: "Oppo Reno2", year: "2024", brand: "oppo" },
+  "oppo-reno2-f": { displayName: "Oppo Reno2 F", year: "2024", brand: "oppo" },
+  "oppo-reno2-z": { displayName: "Oppo Reno2 Z", year: "2024", brand: "oppo" },
+  "oppo-reno3": { displayName: "Oppo Reno3", year: "2024", brand: "oppo" },
+  "oppo-reno3-pro": { displayName: "Oppo Reno3 Pro", year: "2024", brand: "oppo" },
+  "oppo-reno4": { displayName: "Oppo Reno4", year: "2024", brand: "oppo" },
+  "oppo-reno4-pro": { displayName: "Oppo Reno4 Pro", year: "2024", brand: "oppo" },
+  "oppo-reno4-z": { displayName: "Oppo Reno4 Z", year: "2024", brand: "oppo" },
+  "oppo-reno5": { displayName: "Oppo Reno5", year: "2024", brand: "oppo" },
+  "oppo-reno5-pro": { displayName: "Oppo Reno5 Pro", year: "2024", brand: "oppo" },
+  "oppo-reno6": { displayName: "Oppo Reno6", year: "2024", brand: "oppo" },
+  "oppo-reno6-pro": { displayName: "Oppo Reno6 Pro", year: "2024", brand: "oppo" },
+  "oppo-reno6-z": { displayName: "Oppo Reno6 Z", year: "2024", brand: "oppo" },
+  "oppo-reno7": { displayName: "Oppo Reno7", year: "2024", brand: "oppo" },
+  "oppo-reno7-pro": { displayName: "Oppo Reno7 Pro", year: "2024", brand: "oppo" },
+  "oppo-reno7-z": { displayName: "Oppo Reno7 Z", year: "2024", brand: "oppo" },
+  "oppo-reno8": { displayName: "Oppo Reno8", year: "2024", brand: "oppo" },
+  "oppo-reno8-pro": { displayName: "Oppo Reno8 Pro", year: "2024", brand: "oppo" },
+  "oppo-reno8-t": { displayName: "Oppo Reno8 T", year: "2024", brand: "oppo" },
+  "oppo-reno8-z": { displayName: "Oppo Reno8 Z", year: "2024", brand: "oppo" },
 };
 
 // Derive phoneModels array from MODEL_META
 function placeholder(name: string, bg: string, text: string) {
   return `https://placehold.co/200x240/${bg}/${text}?text=${encodeURIComponent(name.replace(/ /g, "+"))}`;
 }
-const SAMSUNG_BG = "1a1a2e/4a9eff";
-const XIAOMI_BG  = "3a1f00/fb923c";
+const BRAND_BG: Record<string, string> = {
+  samsung: "1a1a2e/4a9eff",
+  xiaomi:  "3a1f00/fb923c",
+  oppo:    "064e3b/6ee7b7",
+  realme:  "78350f/fde68a",
+  vivo:    "1e3a8a/93c5fd",
+  honor:   "7f1d1d/fca5a5",
+};
 
-export const phoneModels: PhoneModel[] = Object.entries(MODEL_META).map(([slug, meta]) => ({
-  name: meta.displayName,
-  year: meta.year,
-  brand: meta.brand,
-  image: meta.brand === "apple"
-    ? (APPLE_IMAGES[slug] ?? APPLE_IMAGES["iphone-15"])
-    : meta.brand === "samsung"
-    ? placeholder(meta.displayName, SAMSUNG_BG.split("/")[0], SAMSUNG_BG.split("/")[1])
-    : placeholder(meta.displayName, XIAOMI_BG.split("/")[0], XIAOMI_BG.split("/")[1]),
-}));
+export const phoneModels: PhoneModel[] = Object.entries(MODEL_META).map(([slug, meta]) => {
+  const bg = BRAND_BG[meta.brand];
+  return {
+    name: meta.displayName,
+    year: meta.year,
+    brand: meta.brand,
+    image: meta.brand === "apple"
+      ? (APPLE_IMAGES[slug] ?? APPLE_IMAGES["iphone-15"])
+      : bg
+      ? placeholder(meta.displayName, bg.split("/")[0], bg.split("/")[1])
+      : placeholder(meta.displayName, "334155", "fff"),
+  };
+});
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 export function getBrandModels(brandSlug: string) {
