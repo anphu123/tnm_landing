@@ -68,15 +68,13 @@ body {
   50%       { transform: translateY(-6px) rotate(-1deg); }
 }
 
-@keyframes phoneSpinIn {
-  from { opacity: 0; transform: rotate(140deg) scale(0.45); }
-  65%  { opacity: 1; transform: rotate(-8deg) scale(1.04); }
-  to   { opacity: 1; transform: rotate(0deg) scale(1); }
+@keyframes phoneSlideUpIn {
+  from { opacity: 0; transform: translateY(110%) scale(0.92); }
+  to   { opacity: 1; transform: translateY(0%) scale(1); }
 }
-@keyframes phoneSpinOut {
-  from { opacity: 1; transform: rotate(0deg) scale(1); }
-  35%  { opacity: 1; transform: rotate(8deg) scale(1.02); }
-  to   { opacity: 0; transform: rotate(-140deg) scale(0.45); }
+@keyframes phoneSlideUpOut {
+  from { opacity: 1; transform: translateY(0%) scale(1); }
+  to   { opacity: 0; transform: translateY(-80%) scale(0.92); }
 }
 
 @keyframes phoneFanCenter {
@@ -154,10 +152,10 @@ body {
     animation: floatBadge3 3.8s ease-in-out 0.5s infinite;
   }
   .animate-phone-spin-in {
-    animation: phoneSpinIn 0.55s cubic-bezier(.22,1,.36,1) both;
+    animation: phoneSlideUpIn 0.5s cubic-bezier(.22,1,.36,1) both;
   }
   .animate-phone-spin-out {
-    animation: phoneSpinOut 0.45s cubic-bezier(.4,0,1,1) both;
+    animation: phoneSlideUpOut 0.4s cubic-bezier(.4,0,1,1) both;
     pointer-events: none;
   }
   .animate-phone-fan-center {

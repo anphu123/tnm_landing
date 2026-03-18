@@ -150,18 +150,23 @@ export default function AppShowcaseSection() {
 
             {/* CENTER — frame mới spin vào, frame cũ spin ra, chồng nhau */}
             <div className="absolute animate-phone-fan-center" style={{left:"50%",bottom:0,zIndex:20}}>
-              <div className="animate-float" style={{position:"relative",width:"230px",height:"100%"}}>
+              <div className="animate-float" style={{position:"relative",width:"230px"}}>
                 {/* Glow */}
                 <div className="absolute -inset-6 rounded-[3.5rem] blur-3xl -z-10" style={{background:"rgba(34,197,94,0.14)"}} />
-                {/* Prev frame — spin out */}
-                {slide.prev >= 0 && (
-                  <div key={`out-${slide.key}`} className="animate-phone-spin-out" style={{position:"absolute",inset:0}}>
-                    <PhoneFrame screen={screens[slide.prev]} active />
+                {/* Clip area so frames don't overflow during slide */}
+                <div style={{overflow:"hidden",borderRadius:"3rem"}}>
+                  <div style={{position:"relative"}}>
+                    {/* Prev frame — slide up out */}
+                    {slide.prev >= 0 && (
+                      <div key={`out-${slide.key}`} className="animate-phone-spin-out" style={{position:"absolute",inset:0,zIndex:1}}>
+                        <PhoneFrame screen={screens[slide.prev]} active />
+                      </div>
+                    )}
+                    {/* Curr frame — slide up in */}
+                    <div key={`in-${slide.key}`} className="animate-phone-spin-in" style={{position:"relative",zIndex:2}}>
+                      <PhoneFrame screen={screens[slide.curr]} active />
+                    </div>
                   </div>
-                )}
-                {/* Curr frame — spin in */}
-                <div key={`in-${slide.key}`} className="animate-phone-spin-in">
-                  <PhoneFrame screen={screens[slide.curr]} active />
                 </div>
               </div>
             </div>
@@ -225,14 +230,16 @@ export default function AppShowcaseSection() {
           {/* Center phone – mobile spin crossfade */}
           <div className="absolute animate-float" style={{left:"50%",bottom:0,zIndex:20,transform:"translateX(-50%)"}}>
             <div className="absolute -inset-4 rounded-[3rem] blur-2xl -z-10" style={{background:"rgba(34,197,94,0.11)"}} />
-            <div style={{position:"relative",width:"168px"}}>
-              {slide.prev >= 0 && (
-                <div key={`mob-out-${slide.key}`} className="animate-phone-spin-out" style={{position:"absolute",inset:0}}>
-                  <PhoneFrameSm screen={screens[slide.prev]} active />
+            <div style={{overflow:"hidden",borderRadius:"2.6rem",width:"168px"}}>
+              <div style={{position:"relative"}}>
+                {slide.prev >= 0 && (
+                  <div key={`mob-out-${slide.key}`} className="animate-phone-spin-out" style={{position:"absolute",inset:0,zIndex:1}}>
+                    <PhoneFrameSm screen={screens[slide.prev]} active />
+                  </div>
+                )}
+                <div key={`mob-in-${slide.key}`} className="animate-phone-spin-in" style={{position:"relative",zIndex:2}}>
+                  <PhoneFrameSm screen={screens[slide.curr]} active />
                 </div>
-              )}
-              <div key={`mob-in-${slide.key}`} className="animate-phone-spin-in">
-                <PhoneFrameSm screen={screens[slide.curr]} active />
               </div>
             </div>
           </div>
