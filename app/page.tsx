@@ -9,8 +9,12 @@ import TrustSection from "@/components/TrustSection";
 import ReviewsSection from "@/components/ReviewsSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import Footer from "@/components/Footer";
+import ProductsSection from "@/components/ProductsSection";
+import { fetchProducts } from "@/lib/sheets";
 
-export default function Home() {
+export default async function Home() {
+  const products = await fetchProducts();
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -19,6 +23,7 @@ export default function Home() {
         <PartnersStrip />
         <AppShowcaseSection />
         <SellSection />
+        <ProductsSection products={products} />
         <HowItWorksSection />
         <GradesSection />
         <TrustSection />
