@@ -114,17 +114,17 @@ export default function AppShowcaseSection() {
               <div className="relative bg-gray-900" style={{width:"230px",borderRadius:"3rem",padding:"8px",boxShadow:"0 0 80px rgba(34,197,94,0.3),0 40px 80px rgba(0,0,0,0.6)",border:"2px solid rgba(34,197,94,0.35)"}}>
                 {/* Fixed notch */}
                 <div className="absolute" style={{top:"12px",left:"50%",transform:"translateX(-50%)",width:"56px",height:"15px",background:"#000",borderRadius:"9999px",zIndex:30}} />
-                {/* Sliding screen viewport */}
-                <div style={{overflow:"hidden",borderRadius:"2.3rem"}}>
+                {/* Sliding screen viewport — 230px total - 4px border - 16px padding = 210px */}
+                <div style={{overflow:"hidden",borderRadius:"2.3rem",width:"210px"}}>
                   <div
-                    className="flex"
                     style={{
-                      transform: `translateX(calc(-${activeIdx} * 100%))`,
+                      display:"flex",
+                      transform: `translateX(calc(-${activeIdx} * 210px))`,
                       transition: "transform 0.55s cubic-bezier(0.4,0,0.2,1)",
                     }}
                   >
                     {screens.map((screen, i) => (
-                      <img key={i} src={screen.img} alt="Easy Swap App" className="shrink-0" style={{width:"100%",display:"block"}} />
+                      <img key={i} src={screen.img} alt="Easy Swap App" style={{width:"210px",flexShrink:0,display:"block"}} />
                     ))}
                   </div>
                 </div>
@@ -188,17 +188,17 @@ export default function AppShowcaseSection() {
             <div className="relative bg-gray-900" style={{width:"168px",borderRadius:"2.6rem",padding:"7px",border:"2px solid rgba(34,197,94,0.38)",boxShadow:"0 0 50px rgba(34,197,94,0.24),0 24px 50px rgba(0,0,0,0.55)"}}>
               {/* Fixed notch */}
               <div className="absolute" style={{top:"10px",left:"50%",transform:"translateX(-50%)",width:"50px",height:"13px",background:"#000",borderRadius:"9999px",zIndex:30}} />
-              {/* Sliding screen viewport */}
-              <div style={{overflow:"hidden",borderRadius:"2rem"}}>
+              {/* Sliding screen viewport — 168px total - 4px border - 14px padding = 150px */}
+              <div style={{overflow:"hidden",borderRadius:"2rem",width:"150px"}}>
                 <div
-                  className="flex"
                   style={{
-                    transform: `translateX(calc(-${activeIdx} * 100%))`,
+                    display:"flex",
+                    transform: `translateX(calc(-${activeIdx} * 150px))`,
                     transition: "transform 0.55s cubic-bezier(0.4,0,0.2,1)",
                   }}
                 >
                   {screens.map((screen, i) => (
-                    <img key={i} src={screen.img} alt="Easy Swap App" className="shrink-0" style={{width:"100%",display:"block"}} />
+                    <img key={i} src={screen.img} alt="Easy Swap App" style={{width:"150px",flexShrink:0,display:"block"}} />
                   ))}
                 </div>
               </div>
