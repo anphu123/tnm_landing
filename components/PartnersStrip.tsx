@@ -24,7 +24,7 @@ export default function PartnersStrip() {
               <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0 shadow-md shadow-orange-500/20 p-1">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg"
+                  src="https://th.bing.com/th/id/ODF.ufO5oCRghZiu7drvZ6N4gg?w=32&h=32&qlt=90&pcl=fffffc&o=6&pid=1.2"
                   alt="Xiaomi"
                   className="w-full h-full object-contain"
                 />
@@ -40,7 +40,7 @@ export default function PartnersStrip() {
               <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0 shadow-md shadow-blue-500/20 p-1">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://viettelstore.vn/Content/images/logo-viettel-store.png"
+                  src="https://cdn.viettelstore.vn/images/ctkm/theme-tet-2021/logo.png"
                   alt="Viettel Store"
                   className="w-full h-full object-contain"
                 />

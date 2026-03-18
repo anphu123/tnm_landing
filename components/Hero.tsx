@@ -107,12 +107,12 @@ export default function Hero() {
               <span className="text-gray-600 text-[10px] uppercase tracking-widest font-bold shrink-0">Đối tác:</span>
               <div className="flex items-center gap-2 bg-orange-500/10 border border-orange-400/25 rounded-lg px-3 py-1.5">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Xiaomi" className="w-5 h-5 object-contain bg-white rounded p-0.5" />
+                <img src="https://th.bing.com/th/id/ODF.ufO5oCRghZiu7drvZ6N4gg?w=32&h=32&qlt=90&pcl=fffffc&o=6&pid=1.2" alt="Xiaomi" className="w-5 h-5 object-contain bg-white rounded p-0.5" />
                 <span className="text-white text-[11px] font-bold">Xiaomi Store</span>
               </div>
               <div className="flex items-center gap-2 bg-blue-500/10 border border-blue-400/25 rounded-lg px-3 py-1.5">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://viettelstore.vn/Content/images/logo-viettel-store.png" alt="Viettel Store" className="w-5 h-5 object-contain bg-white rounded p-0.5" />
+                <img src="https://cdn.viettelstore.vn/images/ctkm/theme-tet-2021/logo.png" alt="Viettel Store" className="w-5 h-5 object-contain bg-white rounded p-0.5" />
                 <span className="text-white text-[11px] font-bold">Viettel Store</span>
               </div>
             </div>
