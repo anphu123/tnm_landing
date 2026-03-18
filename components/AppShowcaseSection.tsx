@@ -227,8 +227,9 @@ export default function AppShowcaseSection() {
             </div>
           </div>
 
-          {/* Center phone – mobile spin crossfade */}
-          <div className="absolute animate-float" style={{left:"50%",bottom:0,zIndex:20,transform:"translateX(-50%)"}}>
+          {/* Center phone – mobile slide-up crossfade */}
+          <div className="absolute" style={{left:"50%",bottom:0,zIndex:20,transform:"translateX(-50%)"}}>
+            <div className="animate-float">
             <div className="absolute -inset-4 rounded-[3rem] blur-2xl -z-10" style={{background:"rgba(34,197,94,0.11)"}} />
             <div style={{overflow:"hidden",borderRadius:"2.6rem",width:"168px"}}>
               <div style={{position:"relative"}}>
@@ -242,6 +243,7 @@ export default function AppShowcaseSection() {
                 </div>
               </div>
             </div>
+            </div>{/* animate-float */}
           </div>
 
           {/* Right phone */}
