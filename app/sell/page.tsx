@@ -52,14 +52,19 @@ export default function SellLandingPage() {
               <a
                 key={brand.slug}
                 href={`/sell/${brand.slug}/model`}
-                className="group bg-white rounded-2xl border-2 border-gray-100 hover:border-green-300 hover:shadow-xl p-6 flex flex-col items-center text-center transition-all"
+                className="group bg-white rounded-2xl border-2 border-gray-100 hover:border-green-300 hover:shadow-xl px-5 py-5 flex flex-col items-center text-center transition-all"
               >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${brand.color} flex items-center justify-center text-3xl mb-4 shadow-md group-hover:scale-105 transition-transform`}>
-                  {brand.logo}
+                <div className="w-full h-12 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={brand.logoImg}
+                    alt={brand.name}
+                    className="max-h-10 max-w-[120px] w-auto object-contain"
+                  />
                 </div>
-                <span className="font-bold text-gray-900 text-base">{brand.name}</span>
-                <span className="text-xs text-gray-400 mt-1">{brand.count}+ model</span>
-                <span className="mt-3 text-xs text-green-500 font-semibold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                <span className="font-bold text-gray-900 text-sm">{brand.name}</span>
+                <span className="text-xs text-gray-400 mt-0.5">{brand.count}+ model</span>
+                <span className="mt-2 text-xs text-green-500 font-semibold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
                   Chọn <ChevronRight className="w-3 h-3" />
                 </span>
               </a>

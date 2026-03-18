@@ -8,19 +8,22 @@ export interface PhoneModel {
 export interface Brand {
   slug: string;
   name: string;
-  logo: string;
+  logo: string;       // emoji fallback
+  logoImg: string;    // real logo image URL
   color: string;
   count: number;
 }
 
+const CPN = "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:60/q:90/plain/https://cellphones.com.vn/media/wysiwyg/Web/Brand";
+
 export const brands: Brand[] = [
-  { slug: "apple",   name: "Apple",   logo: "🍎", color: "from-gray-800 to-gray-600",     count: 37 },
-  { slug: "samsung", name: "Samsung", logo: "🔵", color: "from-blue-600 to-blue-400",     count: 50 },
-  { slug: "xiaomi",  name: "Xiaomi",  logo: "🟠", color: "from-orange-500 to-red-500",   count: 30 },
-  { slug: "oppo",    name: "Oppo",    logo: "🟢", color: "from-green-600 to-teal-500",   count: 87 },
-  { slug: "realme",  name: "Realme",  logo: "🟡", color: "from-yellow-500 to-orange-400", count: 22 },
-  { slug: "vivo",    name: "Vivo",    logo: "🔷", color: "from-blue-500 to-indigo-600",  count: 14 },
-  { slug: "honor",   name: "Honor",   logo: "🔴", color: "from-red-600 to-rose-500",     count: 19 },
+  { slug: "apple",   name: "Apple",   logo: "🍎", logoImg: `${CPN}/iPhone-240x50.png`,       color: "from-gray-800 to-gray-600",     count: 37 },
+  { slug: "samsung", name: "Samsung", logo: "📱", logoImg: `${CPN}/Samsung-240x50.png`,      color: "from-blue-600 to-blue-400",     count: 50 },
+  { slug: "xiaomi",  name: "Xiaomi",  logo: "🟠", logoImg: `${CPN}/XIAOMI-new-240x50.png`,   color: "from-orange-500 to-red-500",   count: 30 },
+  { slug: "oppo",    name: "Oppo",    logo: "🟢", logoImg: `${CPN}/Oppo-240x50.png`,         color: "from-green-600 to-teal-500",   count: 87 },
+  { slug: "realme",  name: "Realme",  logo: "🟡", logoImg: `${CPN}/Realme-240x50.png`,       color: "from-yellow-500 to-orange-400", count: 22 },
+  { slug: "vivo",    name: "Vivo",    logo: "🔷", logoImg: `${CPN}/Vivo-240x50.png`,         color: "from-blue-500 to-indigo-600",  count: 14 },
+  { slug: "honor",   name: "Honor",   logo: "🔴", logoImg: `${CPN}/Honor-240x50.png`,        color: "from-red-600 to-rose-500",     count: 19 },
 ];
 
 // ─── Condition grade type (declared early for PRICE_MAP) ─────────────────────
