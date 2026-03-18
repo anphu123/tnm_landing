@@ -62,8 +62,8 @@ export default function SellLandingPage() {
                     className="max-h-10 max-w-[120px] w-auto object-contain"
                   />
                 </div>
-                <span className="font-bold text-gray-900 text-sm">{brand.name}</span>
-                <span className="text-xs text-gray-400 mt-0.5">{brand.count}+ model</span>
+                {/* <span className="font-bold text-gray-900 text-sm">{brand.name}</span>
+                <span className="text-xs text-gray-400 mt-0.5">{brand.count}+ model</span> */}
                 <span className="mt-2 text-xs text-green-500 font-semibold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
                   Chọn <ChevronRight className="w-3 h-3" />
                 </span>

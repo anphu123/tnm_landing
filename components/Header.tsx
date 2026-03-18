@@ -18,16 +18,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3 shrink-0">
-            <div className="flex flex-col leading-none">
-              <span className="text-lg font-extrabold tracking-widest uppercase">
-                <span className="text-white">TẦMNHÌN</span>
-                <span className="text-green-400">MỚI</span>
-              </span>
-              <span className="text-gray-400 text-[9px] tracking-widest uppercase font-medium">
-                Solution &amp; Distribution
-              </span>
-            </div>
+          <a href="/" className="flex items-center shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo.png"
+              alt="Tầm Nhìn Mới"
+              className="h-10 w-auto object-contain"
+            />
           </a>
 
           {/* Nav desktop */}

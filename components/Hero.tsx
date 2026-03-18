@@ -112,7 +112,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-2 bg-blue-500/10 border border-blue-400/25 rounded-lg px-3 py-1.5">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://cdn.viettelstore.vn/images/ctkm/theme-tet-2021/logo.png" alt="Viettel Store" className="w-5 h-5 object-contain bg-white rounded p-0.5" />
+                <img src="https://cdn.viettelstore.vn/images/Advertises/default-logo-vts.png" alt="Viettel Store" className="w-5 h-5 object-contain bg-white rounded p-0.5" />
                 <span className="text-white text-[11px] font-bold">Viettel Store</span>
               </div>
             </div>
