@@ -91,69 +91,77 @@ export default function AppShowcaseSection() {
             {/* Floor glow */}
             <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-96 h-16 rounded-full blur-3xl pointer-events-none" style={{background:"rgba(34,197,94,0.18)"}} />
 
-            {/* Far-left phone */}
-            <div className="hidden lg:block absolute animate-float-badge-3" style={{left:"50%",bottom:0,zIndex:1}}>
-              <div className="bg-gray-900 rounded-[2rem] p-[5px] shadow-xl"
-                style={{width:"108px",transform:"translateX(calc(-50% - 310px)) rotate(-10deg) translateY(44px)",opacity:0.45,filter:"brightness(0.7)",border:"1px solid rgba(255,255,255,0.06)"}}>
-                <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-9 h-[10px] bg-black rounded-full z-10" />
-                <img src={screens[(activeIdx - 2 + screens.length) % screens.length].img} alt="" className="w-full rounded-[1.6rem] transition-opacity duration-300" />
-              </div>
-            </div>
-
-            {/* Left phone */}
-            <div className="hidden lg:block absolute animate-float-badge-1" style={{left:"50%",bottom:0,zIndex:5}}>
-              <div className="bg-gray-900 rounded-[2.4rem] p-[7px] shadow-2xl"
-                style={{width:"158px",transform:"translateX(calc(-50% - 190px)) rotate(-6deg) translateY(22px)",opacity:0.78,filter:"brightness(0.88)",border:"1px solid rgba(255,255,255,0.1)"}}>
-                <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-12 h-[13px] bg-black rounded-full z-10" />
-                <img src={screens[(activeIdx - 1 + screens.length) % screens.length].img} alt="" className="w-full rounded-[2rem] transition-opacity duration-300" />
-              </div>
-            </div>
-
-            {/* CENTER – whole phone slides as one unit */}
-            <div className="absolute animate-float" style={{left:"50%",bottom:0,zIndex:20,transform:"translateX(-50%)"}}>
-              {/* Glow – always centered */}
-              <div className="absolute -inset-6 rounded-[3.5rem] blur-3xl -z-10" style={{background:"rgba(34,197,94,0.14)"}} />
-              {/* Carousel: overflow clips adjacent phones */}
-              <div style={{width:"230px",overflow:"hidden"}}>
-                <div style={{
-                  display:"flex",
-                  transform:`translateX(calc(-${activeIdx} * 230px))`,
-                  transition:"transform 0.55s cubic-bezier(0.4,0,0.2,1)",
-                }}>
-                  {screens.map((screen, i) => (
-                    <div key={i} className="relative bg-gray-900 shrink-0" style={{
-                      width:"230px",
-                      borderRadius:"3rem",
-                      padding:"8px",
-                      border: i === activeIdx ? "2px solid rgba(34,197,94,0.45)" : "2px solid rgba(255,255,255,0.08)",
-                      boxShadow: i === activeIdx ? "0 0 60px rgba(34,197,94,0.25),0 30px 60px rgba(0,0,0,0.5)" : "none",
-                      transition:"border 0.4s, box-shadow 0.4s",
-                    }}>
-                      {/* Notch */}
-                      <div style={{position:"absolute",top:"12px",left:"50%",transform:"translateX(-50%)",width:"56px",height:"15px",background:"#000",borderRadius:"9999px",zIndex:30}} />
-                      {/* Screen */}
-                      <img src={screen.img} alt="Easy Swap App" style={{width:"100%",borderRadius:"2.3rem",display:"block"}} />
-                    </div>
-                  ))}
+            {/* Far-left phone — entrance spins in from center-left */}
+            <div className="hidden lg:block absolute animate-phone-fan-far-left" style={{left:"50%",bottom:0,zIndex:1}}>
+              <div className="animate-float-badge-3">
+                <div className="relative bg-gray-900 rounded-[2rem] p-[5px] shadow-xl"
+                  style={{width:"108px",opacity:0.45,filter:"brightness(0.7)",border:"1px solid rgba(255,255,255,0.06)"}}>
+                  <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-9 h-[10px] bg-black rounded-full z-10" />
+                  <img src={screens[(activeIdx - 2 + screens.length) % screens.length].img} alt="" className="w-full rounded-[1.6rem] transition-opacity duration-300" />
                 </div>
               </div>
             </div>
 
-            {/* Right phone */}
-            <div className="hidden lg:block absolute animate-float-badge-2" style={{left:"50%",bottom:0,zIndex:5}}>
-              <div className="bg-gray-900 rounded-[2.4rem] p-[7px] shadow-2xl"
-                style={{width:"158px",transform:"translateX(calc(-50% + 190px)) rotate(6deg) translateY(22px)",opacity:0.78,filter:"brightness(0.88)",border:"1px solid rgba(255,255,255,0.1)"}}>
-                <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-12 h-[13px] bg-black rounded-full z-10" />
-                <img src={screens[(activeIdx + 1) % screens.length].img} alt="" className="w-full rounded-[2rem] transition-opacity duration-300" />
+            {/* Left phone — entrance spins in from center */}
+            <div className="hidden lg:block absolute animate-phone-fan-left" style={{left:"50%",bottom:0,zIndex:5}}>
+              <div className="animate-float-badge-1">
+                <div className="relative bg-gray-900 rounded-[2.4rem] p-[7px] shadow-2xl"
+                  style={{width:"158px",opacity:0.78,filter:"brightness(0.88)",border:"1px solid rgba(255,255,255,0.1)"}}>
+                  <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-12 h-[13px] bg-black rounded-full z-10" />
+                  <img src={screens[(activeIdx - 1 + screens.length) % screens.length].img} alt="" className="w-full rounded-[2rem] transition-opacity duration-300" />
+                </div>
               </div>
             </div>
 
-            {/* Far-right phone */}
-            <div className="hidden lg:block absolute animate-float-badge-3" style={{left:"50%",bottom:0,zIndex:1}}>
-              <div className="bg-gray-900 rounded-[2rem] p-[5px] shadow-xl"
-                style={{width:"108px",transform:"translateX(calc(-50% + 310px)) rotate(10deg) translateY(44px)",opacity:0.45,filter:"brightness(0.7)",border:"1px solid rgba(255,255,255,0.06)"}}>
-                <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-9 h-[10px] bg-black rounded-full z-10" />
-                <img src={screens[(activeIdx + 2) % screens.length].img} alt="" className="w-full rounded-[1.6rem] transition-opacity duration-300" />
+            {/* CENTER — spins in from nothing, then floats */}
+            <div className="absolute animate-phone-fan-center" style={{left:"50%",bottom:0,zIndex:20}}>
+              <div className="animate-float">
+                {/* Glow */}
+                <div className="absolute -inset-6 rounded-[3.5rem] blur-3xl -z-10" style={{background:"rgba(34,197,94,0.14)"}} />
+                {/* Carousel */}
+                <div style={{width:"230px",overflow:"hidden"}}>
+                  <div style={{
+                    display:"flex",
+                    transform:`translateX(calc(-${activeIdx} * 230px))`,
+                    transition:"transform 0.55s cubic-bezier(0.4,0,0.2,1)",
+                  }}>
+                    {screens.map((screen, i) => (
+                      <div key={i} className="relative bg-gray-900 shrink-0" style={{
+                        width:"230px",
+                        borderRadius:"3rem",
+                        padding:"8px",
+                        border: i === activeIdx ? "2px solid rgba(34,197,94,0.45)" : "2px solid rgba(255,255,255,0.08)",
+                        boxShadow: i === activeIdx ? "0 0 60px rgba(34,197,94,0.25),0 30px 60px rgba(0,0,0,0.5)" : "none",
+                        transition:"border 0.4s, box-shadow 0.4s",
+                      }}>
+                        <div style={{position:"absolute",top:"12px",left:"50%",transform:"translateX(-50%)",width:"56px",height:"15px",background:"#000",borderRadius:"9999px",zIndex:30}} />
+                        <img src={screen.img} alt="Easy Swap App" style={{width:"100%",borderRadius:"2.3rem",display:"block"}} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right phone — entrance spins in from center */}
+            <div className="hidden lg:block absolute animate-phone-fan-right" style={{left:"50%",bottom:0,zIndex:5}}>
+              <div className="animate-float-badge-2">
+                <div className="relative bg-gray-900 rounded-[2.4rem] p-[7px] shadow-2xl"
+                  style={{width:"158px",opacity:0.78,filter:"brightness(0.88)",border:"1px solid rgba(255,255,255,0.1)"}}>
+                  <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-12 h-[13px] bg-black rounded-full z-10" />
+                  <img src={screens[(activeIdx + 1) % screens.length].img} alt="" className="w-full rounded-[2rem] transition-opacity duration-300" />
+                </div>
+              </div>
+            </div>
+
+            {/* Far-right phone — entrance spins in from center-right */}
+            <div className="hidden lg:block absolute animate-phone-fan-far-right" style={{left:"50%",bottom:0,zIndex:1}}>
+              <div className="animate-float-badge-3">
+                <div className="relative bg-gray-900 rounded-[2rem] p-[5px] shadow-xl"
+                  style={{width:"108px",opacity:0.45,filter:"brightness(0.7)",border:"1px solid rgba(255,255,255,0.06)"}}>
+                  <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-9 h-[10px] bg-black rounded-full z-10" />
+                  <img src={screens[(activeIdx + 2) % screens.length].img} alt="" className="w-full rounded-[1.6rem] transition-opacity duration-300" />
+                </div>
               </div>
             </div>
           </div>

@@ -68,6 +68,32 @@ body {
   50%       { transform: translateY(-6px) rotate(-1deg); }
 }
 
+@keyframes phoneFanCenter {
+  from { opacity: 0; transform: translateX(-50%) scale(0.25) rotate(-360deg); }
+  70%  { opacity: 1; transform: translateX(-50%) scale(1.06) rotate(8deg); }
+  to   { opacity: 1; transform: translateX(-50%) scale(1) rotate(0deg); }
+}
+@keyframes phoneFanLeft {
+  from { opacity: 0; transform: translateX(calc(-50% - 80px)) scale(0.3) rotate(-180deg); }
+  70%  { opacity: 0.85; transform: translateX(calc(-50% - 195px)) scale(1.03) rotate(-9deg); }
+  to   { opacity: 0.78; transform: translateX(calc(-50% - 190px)) rotate(-6deg) translateY(22px); }
+}
+@keyframes phoneFanRight {
+  from { opacity: 0; transform: translateX(calc(-50% + 80px)) scale(0.3) rotate(180deg); }
+  70%  { opacity: 0.85; transform: translateX(calc(-50% + 195px)) scale(1.03) rotate(9deg); }
+  to   { opacity: 0.78; transform: translateX(calc(-50% + 190px)) rotate(6deg) translateY(22px); }
+}
+@keyframes phoneFanFarLeft {
+  from { opacity: 0; transform: translateX(calc(-50% - 120px)) scale(0.2) rotate(-240deg); }
+  70%  { opacity: 0.5; transform: translateX(calc(-50% - 320px)) scale(1.05) rotate(-14deg); }
+  to   { opacity: 0.45; transform: translateX(calc(-50% - 310px)) rotate(-10deg) translateY(44px); }
+}
+@keyframes phoneFanFarRight {
+  from { opacity: 0; transform: translateX(calc(-50% + 120px)) scale(0.2) rotate(240deg); }
+  70%  { opacity: 0.5; transform: translateX(calc(-50% + 320px)) scale(1.05) rotate(14deg); }
+  to   { opacity: 0.45; transform: translateX(calc(-50% + 310px)) rotate(10deg) translateY(44px); }
+}
+
 @keyframes spinReveal {
   from { opacity: 0; transform: rotate(-200deg) scale(0.4); }
   60%  { opacity: 1; transform: rotate(12deg) scale(1.05); }
@@ -115,6 +141,21 @@ body {
   }
   .animate-float-badge-3 {
     animation: floatBadge3 3.8s ease-in-out 0.5s infinite;
+  }
+  .animate-phone-fan-center {
+    animation: phoneFanCenter 1.1s cubic-bezier(.22,1,.36,1) both;
+  }
+  .animate-phone-fan-left {
+    animation: phoneFanLeft 1.0s cubic-bezier(.22,1,.36,1) 0.15s both;
+  }
+  .animate-phone-fan-right {
+    animation: phoneFanRight 1.0s cubic-bezier(.22,1,.36,1) 0.15s both;
+  }
+  .animate-phone-fan-far-left {
+    animation: phoneFanFarLeft 0.9s cubic-bezier(.22,1,.36,1) 0.3s both;
+  }
+  .animate-phone-fan-far-right {
+    animation: phoneFanFarRight 0.9s cubic-bezier(.22,1,.36,1) 0.3s both;
   }
   .animate-spin-reveal {
     animation: spinReveal 0.75s cubic-bezier(.22,1,.36,1) both;
