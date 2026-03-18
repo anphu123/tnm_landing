@@ -66,9 +66,9 @@ export default function AppShowcaseSection() {
         </div>
 
         {/* Main layout desktop */}
-        <div className="hidden lg:flex items-center gap-8 mb-16">
-          {/* Left features – fixed width */}
-          <div className="flex flex-col gap-4 shrink-0 w-56">
+        <div className="hidden lg:block relative mb-16" style={{height:"540px"}}>
+          {/* Left features – absolute left */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 w-56 z-10">
             {features.slice(0,2).map((f,i)=>(
               <Reveal key={f.title} variant="right" delay={i*120}>
                 <div className="flex items-start gap-3 bg-white/[0.04] border border-white/8 rounded-2xl p-4 hover:bg-white/[0.07] hover:border-green-500/30 transition-all duration-300 group cursor-default">
@@ -82,9 +82,8 @@ export default function AppShowcaseSection() {
             ))}
           </div>
 
-          {/* ── 5-phone fan – center-anchored ── */}
-          {/* overflow-visible so side phones can extend beyond flex-1 bounds */}
-          <div className="relative flex-1 overflow-visible" style={{height:"540px"}}>
+          {/* ── 5-phone fan – truly centered ── */}
+          <div className="relative w-full h-full overflow-visible">
             {/* Floor glow */}
             <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-96 h-16 rounded-full blur-3xl pointer-events-none" style={{background:"rgba(34,197,94,0.18)"}} />
 
@@ -150,8 +149,8 @@ export default function AppShowcaseSection() {
             </div>
           </div>
 
-          {/* Right features – fixed width */}
-          <div className="flex flex-col gap-4 shrink-0 w-56">
+          {/* Right features – absolute right */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 w-56 z-10">
             {features.slice(2,4).map((f,i)=>(
               <Reveal key={f.title} variant="left" delay={i*120}>
                 <div className="flex items-start gap-3 bg-white/[0.04] border border-white/8 rounded-2xl p-4 hover:bg-white/[0.07] hover:border-green-500/30 transition-all duration-300 group cursor-default">
