@@ -106,26 +106,27 @@ export default function AppShowcaseSection() {
               </div>
             </div>
 
-            {/* CENTER – full phone frame carousel */}
+            {/* CENTER – phone frame with sliding screen */}
             <div className="absolute animate-float" style={{left:"50%",bottom:0,zIndex:20,transform:"translateX(-50%)"}}>
               {/* Glow */}
               <div className="absolute -inset-6 rounded-[3.5rem] blur-3xl -z-10" style={{background:"rgba(34,197,94,0.14)"}} />
-              {/* Carousel track */}
-              <div style={{width:"230px",overflow:"hidden",borderRadius:"3rem",boxShadow:"0 0 80px rgba(34,197,94,0.3),0 40px 80px rgba(0,0,0,0.6)",border:"2px solid rgba(34,197,94,0.35)"}}>
-                <div
-                  className="flex"
-                  style={{
-                    width: `${screens.length * 230}px`,
-                    transform: `translateX(calc(-${activeIdx} * 230px))`,
-                    transition: "transform 0.55s cubic-bezier(0.4,0,0.2,1)",
-                  }}
-                >
-                  {screens.map((screen, i) => (
-                    <div key={i} className="relative bg-gray-900 shrink-0" style={{width:"230px",padding:"8px"}}>
-                      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[56px] h-[15px] bg-black rounded-full z-10" />
-                      <img src={screen.img} alt="Easy Swap App" className="w-full" style={{borderRadius:"2.6rem"}} />
-                    </div>
-                  ))}
+              {/* Phone bezel – fixed */}
+              <div className="relative bg-gray-900" style={{width:"230px",borderRadius:"3rem",padding:"8px",boxShadow:"0 0 80px rgba(34,197,94,0.3),0 40px 80px rgba(0,0,0,0.6)",border:"2px solid rgba(34,197,94,0.35)"}}>
+                {/* Fixed notch */}
+                <div className="absolute" style={{top:"12px",left:"50%",transform:"translateX(-50%)",width:"56px",height:"15px",background:"#000",borderRadius:"9999px",zIndex:30}} />
+                {/* Sliding screen viewport */}
+                <div style={{overflow:"hidden",borderRadius:"2.3rem"}}>
+                  <div
+                    className="flex"
+                    style={{
+                      transform: `translateX(calc(-${activeIdx} * 100%))`,
+                      transition: "transform 0.55s cubic-bezier(0.4,0,0.2,1)",
+                    }}
+                  >
+                    {screens.map((screen, i) => (
+                      <img key={i} src={screen.img} alt="Easy Swap App" className="shrink-0" style={{width:"100%",display:"block"}} />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -183,21 +184,23 @@ export default function AppShowcaseSection() {
           {/* Center phone – mobile carousel */}
           <div className="absolute animate-float" style={{left:"50%",bottom:0,zIndex:20,transform:"translateX(-50%)"}}>
             <div className="absolute -inset-4 rounded-[3rem] blur-2xl -z-10" style={{background:"rgba(34,197,94,0.11)"}} />
-            <div style={{width:"168px",overflow:"hidden",borderRadius:"2.6rem",border:"1.5px solid rgba(34,197,94,0.38)",boxShadow:"0 0 50px rgba(34,197,94,0.24),0 24px 50px rgba(0,0,0,0.55)"}}>
-              <div
-                className="flex"
-                style={{
-                  width: `${screens.length * 168}px`,
-                  transform: `translateX(calc(-${activeIdx} * 168px))`,
-                  transition: "transform 0.55s cubic-bezier(0.4,0,0.2,1)",
-                }}
-              >
-                {screens.map((screen, i) => (
-                  <div key={i} className="relative bg-gray-900 shrink-0" style={{width:"168px",padding:"7px"}}>
-                    <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-[50px] h-[13px] bg-black rounded-full z-10" />
-                    <img src={screen.img} alt="Easy Swap App" className="w-full" style={{borderRadius:"2.2rem"}} />
-                  </div>
-                ))}
+            {/* Phone bezel – fixed */}
+            <div className="relative bg-gray-900" style={{width:"168px",borderRadius:"2.6rem",padding:"7px",border:"2px solid rgba(34,197,94,0.38)",boxShadow:"0 0 50px rgba(34,197,94,0.24),0 24px 50px rgba(0,0,0,0.55)"}}>
+              {/* Fixed notch */}
+              <div className="absolute" style={{top:"10px",left:"50%",transform:"translateX(-50%)",width:"50px",height:"13px",background:"#000",borderRadius:"9999px",zIndex:30}} />
+              {/* Sliding screen viewport */}
+              <div style={{overflow:"hidden",borderRadius:"2rem"}}>
+                <div
+                  className="flex"
+                  style={{
+                    transform: `translateX(calc(-${activeIdx} * 100%))`,
+                    transition: "transform 0.55s cubic-bezier(0.4,0,0.2,1)",
+                  }}
+                >
+                  {screens.map((screen, i) => (
+                    <img key={i} src={screen.img} alt="Easy Swap App" className="shrink-0" style={{width:"100%",display:"block"}} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
