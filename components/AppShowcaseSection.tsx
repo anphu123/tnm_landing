@@ -1,3 +1,5 @@
+"use client";
+import { useState, useEffect } from "react";
 import Reveal from "./Reveal";
 
 const screens = [
@@ -16,6 +18,15 @@ const features = [
 ];
 
 export default function AppShowcaseSection() {
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIdx((i) => (i + 1) % screens.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative overflow-hidden py-24" style={{background:"linear-gradient(160deg,#020c05 0%,#041a0a 35%,#061f0d 65%,#020c05 100%)"}}>
       {/* Grid overlay */}
@@ -104,7 +115,7 @@ export default function AppShowcaseSection() {
                 style={{width:"230px",transform:"translateX(-50%)",boxShadow:"0 0 80px rgba(34,197,94,0.3),0 40px 80px rgba(0,0,0,0.6)",border:"2px solid rgba(34,197,94,0.35)"}}>
                 <div className="absolute -inset-6 rounded-[3.5rem] blur-3xl -z-10" style={{background:"rgba(34,197,94,0.14)"}} />
                 <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[56px] h-[15px] bg-black rounded-full z-10" />
-                <img src={screens[0].img} alt="Easy Swap App" className="w-full rounded-[2.6rem]" />
+                <img key={activeIdx} src={screens[activeIdx].img} alt="Easy Swap App" className="w-full rounded-[2.6rem] transition-opacity duration-500" />
               </div>
             </Reveal>
 
@@ -166,7 +177,7 @@ export default function AppShowcaseSection() {
               style={{width:"168px",transform:"translateX(-50%)",border:"1.5px solid rgba(34,197,94,0.38)",boxShadow:"0 0 50px rgba(34,197,94,0.24),0 24px 50px rgba(0,0,0,0.55)"}}>
               <div className="absolute -inset-4 rounded-[3rem] blur-2xl -z-10" style={{background:"rgba(34,197,94,0.11)"}} />
               <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-[50px] h-[13px] bg-black rounded-full z-10" />
-              <img src={screens[0].img} alt="Easy Swap App" className="w-full rounded-[2.2rem]" />
+              <img key={activeIdx} src={screens[activeIdx].img} alt="Easy Swap App" className="w-full rounded-[2.2rem] transition-opacity duration-500" />
             </div>
           </div>
 
@@ -178,6 +189,17 @@ export default function AppShowcaseSection() {
               <img src={screens[2].img} alt="" className="w-full rounded-[1.6rem]" />
             </div>
           </div>
+        </div>
+
+        {/* Dot indicators */}
+        <div className="flex justify-center gap-2 mb-8">
+          {screens.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveIdx(i)}
+              className={`rounded-full transition-all duration-300 ${i === activeIdx ? "w-6 h-2 bg-green-400" : "w-2 h-2 bg-white/20 hover:bg-white/40"}`}
+            />
+          ))}
         </div>
 
         {/* Download CTA */}
