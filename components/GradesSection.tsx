@@ -29,7 +29,7 @@ export default function GradesSection() {
                         grade.name === "Xuất sắc" ? "bg-green-500" :
                         grade.name === "Tốt" ? "bg-green-400" : "bg-yellow-400"
                       }`} />
-                      <span className="text-xs text-gray-400">{part}</span>
+                      <span className="text-xs text-gray-400 uppercase tracking-wide">{part}</span>
                     </div>
                   ))}
                 </div>
